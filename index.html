@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAGI — The Japanese Head Spa Ritual, Reimagined</title>
+<meta name="description" content="A deep scalp reset for the buildup mass-market shampoo leaves behind. Join the VIP waitlist for early access to our Japanese-inspired scalp ritual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your real Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Meta Pixel — replace YOUR_META_PIXEL_ID with your real Pixel ID (both places) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_META_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- TikTok Pixel — paste your exact base code from TikTok Ads Manager > Events Manager > Setup here.
+     I'm intentionally not fabricating this one — TikTok's loader script gets versioned and a stale
+     copy will silently fail to track. Copy it fresh from your own pixel setup screen. -->
+
+<style>
+  :root {
+    --ink: #16202B;
+    --indigo: #26374B;
+    --indigo-soft: #7E93A6;
+    --paper: #EEEBE2;
+    --paper-deep: #E1DCCC;
+    --bronze: #A47C4B;
+
+    --font-display: 'Shippori Mincho', serif;
+    --font-body: 'Zen Kaku Gothic New', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a { color:inherit; text-decoration:none; }
+  :focus-visible { outline:2px solid var(--indigo); outline-offset:3px; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+  .eyebrow {
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--indigo);
+    font-weight:700;
+  }
+
+  .btn {
+    display:inline-block;
+    background:var(--indigo);
+    color:var(--paper);
+    padding:17px 38px;
+    border-radius:999px;
+    font-family:var(--font-mono);
+    font-size:.78rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+  }
+  .btn:hover { background:var(--ink); transform:translateY(-2px); box-shadow:0 10px 26px rgba(22,32,43,.18); }
+
+  /* rails (signature element) */
+  .hero__rail, .founder__rail, .waitlist__rail { position:absolute; z-index:0; }
+  .hero__rail line, .founder__rail line, .waitlist__rail line { stroke:var(--indigo-soft); stroke-width:1.4; fill:none; }
+  .hero__rail { right:5vw; top:50%; transform:translateY(-50%); width:44px; height:66%; }
+  .founder__rail { left:2vw; top:60px; width:40px; height:80%; }
+  .waitlist__rail { right:5vw; top:50%; transform:translateY(-50%); width:44px; height:56%; }
+
+  /* NAV */
+  .nav {
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 6vw;
+    background:rgba(238,235,226,.85);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  .nav__mark { font-family:var(--font-display); font-size:1.2rem; letter-spacing:.1em; font-weight:600; }
+  .nav__cta {
+    font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+    border:1px solid var(--ink); padding:11px 20px; border-radius:999px;
+    transition:background .3s ease, color .3s ease;
+  }
+  .nav__cta:hover { background:var(--ink); color:var(--paper); }
+
+  /* HERO */
+  .hero {
+    min-height:100vh; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    padding:140px 8vw 100px;
+  }
+  .hero__content { position:relative; z-index:1; max-width:720px; }
+  .hero__content > * { opacity:0; transform:translateY(16px); animation:riseIn .8s ease forwards; }
+  .hero__content .eyebrow { animation-delay:.1s; margin-bottom:24px; display:inline-block; }
+  .hero__headline { animation-delay:.25s; }
+  .hero__sub { animation-delay:.42s; }
+  .hero__content .btn { animation-delay:.58s; }
+  @keyframes riseIn { to { opacity:1; transform:translateY(0); } }
+
+  .hero__headline {
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(2rem, 5vw, 3.75rem); line-height:1.2;
+    margin-bottom:22px;
+  }
+  .hero__sub {
+    font-size:1.02rem; color:rgba(22,32,43,.68); font-weight:300;
+    max-width:460px; margin:0 auto 40px;
+  }
+
+  /* FOUNDER */
+  .founder {
+    position:relative;
+    padding:150px 8vw;
+    max-width:1000px; margin:0 auto;
+    display:grid; grid-template-columns:280px 1fr; gap:60px; align-items:start;
+  }
+  .founder__left { position:sticky; top:140px; }
+  .founder__seal {
+    width:52px; height:52px; border-radius:50%;
+    border:1.5px solid var(--bronze);
+    display:flex; align-items:center; justify-content:center;
+    margin-top:28px;
+  }
+  .founder__seal span { width:8px; height:8px; border-radius:50%; background:var(--bronze); display:block; }
+  .founder__quote {
+    font-family:var(--font-display); font-weight:400;
+    font-size:clamp(1.3rem, 2.6vw, 1.95rem); line-height:1.62;
+  }
+  .founder__sign {
+    margin-top:30px; font-family:var(--font-mono); font-size:.74rem;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--indigo-soft);
+  }
+
+  /* RITUAL */
+  .ritual { background:var(--paper-deep); padding:150px 8vw; }
+  .ritual__head { text-align:center; max-width:600px; margin:0 auto 84px; }
+  .ritual__head .eyebrow { margin-bottom:22px; display:inline-block; }
+  .ritual__head h2 {
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(1.6rem, 3.2vw, 2.3rem); line-height:1.3;
+  }
+  .ritual__steps { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
+  .step { padding:32px 26px; border-top:1px solid var(--indigo-soft); }
+  .step--featured {
+    background:var(--indigo); color:var(--paper);
+    border-top:none; border-radius:4px;
+    padding:40px 30px; box-shadow:0 20px 40px rgba(38,55,75,.18);
+    transform:translateY(-14px);
+  }
+  .step__num { font-family:var(--font-mono); font-size:.85rem; font-weight:700; letter-spacing:.05em; color:var(--indigo-soft); margin-bottom:18px; }
+  .step--featured .step__num { color:rgba(238,235,226,.6); }
+  .step__title { font-family:var(--font-display); font-size:1.25rem; font-weight:500; margin-bottom:12px; }
+  .step__desc { font-size:.92rem; font-weight:300; line-height:1.7; }
+  .step--featured .step__desc { color:rgba(238,235,226,.82); }
+
+  /* WAITLIST */
+  .waitlist { position:relative; padding:160px 8vw; text-align:center; }
+  .waitlist__headline { font-family:var(--font-display); font-weight:500; font-size:clamp(1.9rem,4.2vw,2.8rem); margin-bottom:20px; }
+  .waitlist__sub { max-width:440px; margin:0 auto 42px; color:rgba(22,32,43,.68); font-weight:300; }
+  .waitlist__form { position:relative; z-index:1; display:flex; gap:12px; max-width:420px; margin:0 auto; }
+  .waitlist__input {
+    flex:1; padding:16px 20px; border-radius:999px;
+    border:1px solid var(--indigo-soft); background:var(--paper);
+    font-family:var(--font-body); font-size:.92rem; color:var(--ink);
+  }
+  .waitlist__input::placeholder { color:#9099a0; }
+  .waitlist__micro { position:relative; z-index:1; margin-top:22px; font-family:var(--font-mono); font-weight:400; font-size:.7rem; letter-spacing:.04em; color:var(--indigo-soft); text-transform:uppercase; }
+  .waitlist__success { font-family:var(--font-display); font-size:1.25rem; color:var(--indigo); padding:14px 0 4px; }
+  .waitlist__survey-prompt { margin-top:36px; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color:var(--indigo-soft); }
+  .waitlist__chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:16px; }
+  .chip {
+    font-family:var(--font-mono); font-size:.74rem; letter-spacing:.03em;
+    padding:10px 18px; border-radius:999px; border:1px solid var(--indigo-soft);
+    background:transparent; color:var(--ink); cursor:pointer;
+    transition:background .25s ease, color .25s ease;
+  }
+  .chip:hover:not(:disabled) { background:var(--indigo); color:var(--paper); }
+  .chip:disabled { opacity:.5; cursor:default; }
+  .waitlist__chip-thanks { margin-top:20px; font-family:var(--font-display); font-size:1rem; color:var(--indigo); }
+
+  /* FOOTER */
+  footer { padding:50px 8vw; text-align:center; border-top:1px solid var(--indigo-soft); background:var(--paper-deep); }
+  footer .mark { font-family:var(--font-display); font-size:1rem; letter-spacing:.1em; margin-bottom:8px; font-weight:600; }
+  footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; letter-spacing:.03em; color:var(--indigo-soft); }
+
+  @media (max-width:960px) {
+    .founder { grid-template-columns:1fr; }
+    .founder__left { position:static; display:flex; align-items:center; gap:16px; margin-bottom:36px; }
+    .founder__seal { margin-top:0; }
+    .ritual__steps { grid-template-columns:1fr; }
+    .step--featured { transform:none; }
+    .hero__rail, .founder__rail, .waitlist__rail { display:none; }
+  }
+  @media (max-width:520px) {
+    .waitlist__form { flex-direction:column; }
+    .nav { padding:20px 5vw; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__content > * { animation:none; opacity:1; transform:none; }
+    html { scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav__mark">NAGI</span>
+  <a href="#waitlist" class="nav__cta">Join the Waitlist</a>
+</nav>
+
+<header class="hero">
+  <svg class="hero__rail" viewBox="0 0 44 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="4" y1="18" x2="30" y2="10" opacity=".55"/>
+    <line x1="10" y1="52" x2="40" y2="60" opacity=".3"/>
+    <line x1="2" y1="95" x2="24" y2="82" opacity=".5"/>
+    <line x1="14" y1="140" x2="42" y2="150" opacity=".35"/>
+    <line x1="0" y1="185" x2="20" y2="176" opacity=".45"/>
+    <line x1="8" y1="235" x2="38" y2="228" opacity=".3"/>
+    <line x1="6" y1="290" x2="34" y2="300" opacity=".4"/>
+    <line x1="12" y1="350" x2="40" y2="345" opacity=".3"/>
+    <line x1="4" y1="415" x2="30" y2="420" opacity=".35"/>
+    <line x1="10" y1="480" x2="36" y2="478" opacity=".28"/>
+  </svg>
+  <div class="hero__content">
+    <span class="eyebrow">A Japanese Head Spa Ritual</span>
+    <h1 class="hero__headline">The Japanese Head Spa Ritual,<br>Reimagined for Your Shower.</h1>
+    <p class="hero__sub">A deep scalp reset for the buildup mass-market shampoo leaves behind.</p>
+    <a href="#waitlist" class="btn">Claim My Spot</a>
+  </div>
+</header>
+
+<section class="founder">
+  <svg class="founder__rail" viewBox="0 0 44 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="6" y1="15" x2="34" y2="20" opacity=".4"/>
+    <line x1="10" y1="65" x2="38" y2="60" opacity=".35"/>
+    <line x1="8" y1="118" x2="34" y2="122" opacity=".38"/>
+    <line x1="7" y1="172" x2="35" y2="168" opacity=".35"/>
+    <line x1="9" y1="226" x2="37" y2="230" opacity=".38"/>
+    <line x1="8" y1="280" x2="35" y2="278" opacity=".36"/>
+    <line x1="8" y1="334" x2="36" y2="336" opacity=".38"/>
+    <line x1="8" y1="388" x2="36" y2="388" opacity=".4"/>
+  </svg>
+  <div class="founder__left">
+    <span class="eyebrow">Why I Built This</span>
+    <div class="founder__seal" aria-hidden="true"><span></span></div>
+  </div>
+  <div class="founder__right">
+    <p class="founder__quote">I built this because I was exhausted — exhausted by the heavy roots, the flakes I'd find on dark shirts, the residue I could feel but never fully rinse away. I tried every "clarifying" shampoo on the shelf, and every single one left the same waxy film behind, coating the problem instead of resolving it. So I turned to the Japanese head spa philosophy — a ritual built on purification, not just cleansing — and reformulated it for the modern American shower.</p>
+    <p class="founder__sign">— Founder</p>
+  </div>
+</section>
+
+<section class="ritual">
+  <div class="ritual__head">
+    <span class="eyebrow">The Ritual Reset</span>
+    <h2>A double-cleanse, reimagined for the scalp.</h2>
+  </div>
+  <div class="ritual__steps">
+    <div class="step">
+      <div class="step__num">STEP — 01</div>
+      <h3 class="step__title">The Purifying Pass</h3>
+      <p class="step__desc">Our lightweight first cleanse lifts surface oil and everyday residue, prepping the scalp — much like a skincare double-cleanse preps the face.</p>
+    </div>
+    <div class="step step--featured">
+      <div class="step__num">STEP — 02</div>
+      <h3 class="step__title">The Deep Reset</h3>
+      <p class="step__desc">Our scalp-detox formula goes further, working into the roots to clarify away the invisible layers of debris a single wash leaves behind.</p>
+    </div>
+    <div class="step">
+      <div class="step__num">STEP — 03</div>
+      <h3 class="step__title">The Ritual Finish</h3>
+      <p class="step__desc">Massage, breathe, rinse. What's left is a light, weightless canvas — the way your scalp is supposed to feel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <svg class="waitlist__rail" viewBox="0 0 44 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="8" y1="20" x2="36" y2="20" opacity=".4"/>
+    <line x1="8" y1="70" x2="36" y2="70" opacity=".4"/>
+    <line x1="8" y1="120" x2="36" y2="120" opacity=".4"/>
+    <line x1="8" y1="170" x2="36" y2="170" opacity=".4"/>
+    <line x1="8" y1="220" x2="36" y2="220" opacity=".4"/>
+    <line x1="8" y1="270" x2="36" y2="270" opacity=".4"/>
+    <line x1="8" y1="320" x2="36" y2="320" opacity=".4"/>
+    <line x1="8" y1="370" x2="36" y2="370" opacity=".4"/>
+  </svg>
+  <h2 class="waitlist__headline">Be First to the Reset.</h2>
+  <p class="waitlist__sub">Join the VIP list for early access, founding-member pricing, and the story behind the ritual — before we launch publicly.</p>
+  <form class="waitlist__form" id="waitlistForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <label for="waitlistEmail" class="sr-only">Email address</label>
+    <input type="email" id="waitlistEmail" name="email" class="waitlist__input" placeholder="Enter your email" required>
+    <button type="submit" class="btn">Claim My Spot</button>
+  </form>
+  <p class="waitlist__micro" id="waitlistMicro">No spam. Just the reset, when it's ready.</p>
+</section>
+
+<footer>
+  <div class="mark">NAGI</div>
+  <p class="copy">© 2026 NAGI. A Japanese-inspired scalp ritual, reset for the modern shower.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('waitlistForm');
+  const micro = document.getElementById('waitlistMicro');
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const input = document.getElementById('waitlistEmail');
+    const email = input.value.trim();
+    if (!email || !email.includes('@')) return;
+
+    const formAction = form.action;
+    const btn = form.querySelector('.btn');
+    const originalLabel = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.outerHTML =
+          '<div>' +
+            '<p class="waitlist__success">You\'re on the list. Welcome to the ritual.</p>' +
+            '<p class="waitlist__survey-prompt">One quick optional question — what\'s your biggest scalp frustration?</p>' +
+            '<div class="waitlist__chips" id="waitlistChips">' +
+              '<button type="button" class="chip" data-value="Heavy, weighed-down roots">Heavy, weighed-down roots</button>' +
+              '<button type="button" class="chip" data-value="Visible flakes">Visible flakes</button>' +
+              '<button type="button" class="chip" data-value="Waxy, not-clean feeling">Waxy, not-clean feeling</button>' +
+              '<button type="button" class="chip" data-value="Something else">Something else</button>' +
+            '</div>' +
+          '</div>';
+        micro.textContent = "We'll reach out at " + email + " when it's ready.";
+        if (typeof gtag === 'function') { gtag('event', 'generate_lead', { event_category: 'waitlist', event_label: 'landing_page' }); }
+        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+        if (typeof ttq !== 'undefined') { ttq.track('SubmitForm'); }
+
+        const chipsWrap = document.getElementById('waitlistChips');
+        chipsWrap.addEventListener('click', async function (ev) {
+          const chip = ev.target.closest('.chip');
+          if (!chip) return;
+          chipsWrap.querySelectorAll('.chip').forEach(function (c) { c.disabled = true; });
+          try {
+            await fetch(formAction, {
+              method: 'POST',
+              body: new URLSearchParams({ email: email, frustration: chip.dataset.value }),
+              headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
+            });
+          } catch (err) {}
+          chipsWrap.outerHTML = '<p class="waitlist__chip-thanks">Thanks — this genuinely helps us build the right thing.</p>';
+        });
+      } else {
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+        micro.textContent = 'Something went wrong — please try again.';
+      }
+    } catch (err) {
+      btn.textContent = originalLabel;
+      btn.disabled = false;
+      micro.textContent = 'Something went wrong — please try again.';
+    }
+  });
+</script>
+
+</body>
+</html>
