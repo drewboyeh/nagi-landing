@@ -178,6 +178,7 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
 .product-hero__jp { font-family:var(--font-display); color:var(--sumi-soft); font-size:1.1rem; margin-top:6px; display:block; }
 .product-hero__tagline { color:var(--sumi-soft); margin:18px 0 6px; font-size:1.02rem; }
 .product-hero__desc { max-width:440px; color:rgba(42,37,33,.78); margin:6px 0 32px; }
+.product-hero__price { font-family:var(--font-mono); font-size:1.1rem; font-weight:700; color:var(--sumi); margin-bottom:20px; }
 .product-hero__actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
 .product-hero__added { font-family:var(--font-mono); font-size:.74rem; letter-spacing:.04em; text-transform:uppercase; color:var(--camellia); opacity:0; transition:opacity .25s ease; }
 .product-hero__added.is-visible { opacity:1; }
@@ -220,6 +221,12 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
 .cart-empty a { color:var(--camellia); text-decoration:underline; }
 .cart-actions { margin-top:36px; display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
 .cart-note { margin-top:14px; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.03em; color:var(--sumi-soft); }
+.cart-item__unit-price { display:block; margin-top:3px; font-family:var(--font-mono); font-size:.72rem; color:var(--sumi-soft); }
+.cart-item__total { font-family:var(--font-mono); font-weight:700; min-width:52px; text-align:right; }
+.cart-summary { margin-top:30px; border-top:1px solid var(--kraft); padding-top:20px; }
+.cart-summary__row { display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:.85rem; padding:6px 0; }
+.cart-summary__row--savings { color:var(--camellia); }
+.cart-summary__row--total { font-size:1.05rem; font-weight:700; border-top:1px solid var(--kraft); margin-top:8px; padding-top:14px; }
 
 /* QUIZ */
 .quiz { max-width:640px; margin:0 auto; padding:150px 8vw 140px; text-align:center; min-height:70vh; }
@@ -253,6 +260,7 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
 .product-card__step { font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--sumi-soft); }
 .product-card__name { font-family:var(--font-display); font-size:1.3rem; margin:8px 0 10px; }
 .product-card__name a { color:var(--camellia); }
+.product-card__price { font-family:var(--font-mono); font-weight:700; font-size:.9rem; margin-bottom:10px; }
 .product-card__rationale { font-size:.9rem; color:rgba(42,37,33,.78); margin-bottom:14px; }
 .product-card__toggle { font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; color:var(--sumi-soft); background:none; border:none; cursor:pointer; padding:0; }
 .product-card__toggle:hover { color:var(--camellia); }

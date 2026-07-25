@@ -73,6 +73,7 @@
       <h1 class="product-hero__name">YUZU<span class="product-hero__jp">柚子</span></h1>
       <p class="product-hero__tagline" id="productTagline">The leave-in curl cream.</p>
       <p class="product-hero__desc" id="productDesc"></p>
+      <p class="product-hero__price" id="productPrice"></p>
       <div class="product-hero__actions">
         <button class="btn" id="addToCartBtn">Add to Cart</button>
         <span class="product-hero__added" id="addedNote">Added ✓</span>
@@ -116,6 +117,7 @@
 <script>
   const product = PRODUCTS.yuzu;
   document.getElementById('productDesc').textContent = product.descriptions.default;
+  document.getElementById('productPrice').textContent = formatPrice(product.price);
 
   const ingredientsWrap = document.getElementById('ingredientsWrap');
   if (product.ingredients && product.ingredients.length) {

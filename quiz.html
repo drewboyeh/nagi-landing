@@ -39,7 +39,7 @@
     <button type="button" class="btn" id="addAllBtn">Add All to Cart</button>
     <button type="button" class="btn--ghost" id="retakeBtn">Retake Quiz</button>
   </div>
-  <p class="results-note" id="addAllNote" hidden>Added to cart ✓ — pricing and checkout aren't live yet; we'll email the waitlist the moment they are.</p>
+  <p class="results-note" id="addAllNote" hidden>Added to cart ✓ — checkout isn't live yet; we'll email the waitlist the moment it is.</p>
 </section>
 
 <script src="cart.js"></script>
@@ -257,6 +257,7 @@
       return '<div class="card product-card">' +
         '<span class="product-card__step">' + p.step + '</span>' +
         '<h3 class="product-card__name"><a href="' + p.url + '">' + p.name + '</a></h3>' +
+        '<p class="product-card__price">' + formatPrice(p.price) + '</p>' +
         '<p class="product-card__rationale">' + rationale + '</p>' +
         '<button type="button" class="product-card__toggle" data-id="' + p.id + '">+ View Ingredients</button>' +
         '<div class="product-card__ingredients" id="ingredients-' + p.id + '">' + ingredientsHtml + '</div>' +
@@ -271,8 +272,17 @@
       });
     });
 
+    const recommendedIds = recommended.map(function (r) { return r.product.id; });
+    const isFullSet = ['kome', 'tsubaki', 'yuzu'].every(function (id) { return recommendedIds.indexOf(id) !== -1; });
+    const total = isFullSet
+      ? RITUAL_SET_PRICE
+      : recommended.reduce(function (sum, r) { return sum + r.product.price; }, 0);
+
+    document.getElementById('addAllBtn').textContent =
+      'Add All to Cart — ' + formatPrice(total) + (isFullSet ? ' (Ritual Set)' : '');
+
     document.getElementById('addAllBtn').onclick = function () {
-      cartAddMany(recommended.map(function (r) { return r.product.id; }));
+      cartAddMany(recommendedIds);
       document.getElementById('addAllNote').hidden = false;
     };
   }

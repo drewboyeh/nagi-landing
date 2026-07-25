@@ -51,6 +51,42 @@ function cartCount() {
   return Object.values(cart).reduce(function (sum, qty) { return sum + qty; }, 0);
 }
 
+function formatPrice(n) {
+  return '$' + n.toFixed(0);
+}
+
+// Auto-applies Ritual Set pricing for every matched KOMÉ+TSUBAKI+YUZU trio in
+// the cart (the exact combo "Add All to Cart" produces), pricing anything
+// beyond that at each product's individual rate.
+function cartPricing() {
+  const cart = cartGet();
+  const bundleIds = ['kome', 'tsubaki', 'yuzu'];
+  const bundleQty = bundleIds.every(function (id) { return cart[id] > 0; })
+    ? Math.min.apply(null, bundleIds.map(function (id) { return cart[id]; }))
+    : 0;
+
+  const lines = [];
+  if (bundleQty > 0) {
+    lines.push({ label: 'Ritual Set (KOMÉ + TSUBAKI + YUZU)', qty: bundleQty, unitPrice: RITUAL_SET_PRICE, total: bundleQty * RITUAL_SET_PRICE });
+  }
+  Object.keys(cart).forEach(function (id) {
+    const product = PRODUCTS[id];
+    if (!product) return;
+    const remaining = cart[id] - (bundleIds.indexOf(id) !== -1 ? bundleQty : 0);
+    if (remaining > 0) {
+      lines.push({ label: product.name, qty: remaining, unitPrice: product.price, total: remaining * product.price });
+    }
+  });
+
+  const subtotal = lines.reduce(function (sum, l) { return sum + l.total; }, 0);
+  const fullPriceTotal = Object.keys(cart).reduce(function (sum, id) {
+    const product = PRODUCTS[id];
+    return product ? sum + (product.price * cart[id]) : sum;
+  }, 0);
+
+  return { lines: lines, subtotal: subtotal, savings: fullPriceTotal - subtotal };
+}
+
 function cartRenderCount() {
   const el = document.getElementById('navCartCount');
   if (!el) return;
