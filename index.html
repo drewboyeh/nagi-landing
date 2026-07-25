@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZF9375M5T"></script>
@@ -40,82 +41,12 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
      copy will silently fail to track. Copy it fresh from your own pixel setup screen. -->
 
 <style>
-  :root {
-    --ink: #16202B;
-    --indigo: #26374B;
-    --indigo-soft: #7E93A6;
-    --paper: #EEEBE2;
-    --paper-deep: #E1DCCC;
-    --bronze: #A47C4B;
-
-    --font-display: 'Shippori Mincho', serif;
-    --font-body: 'Zen Kaku Gothic New', sans-serif;
-    --font-mono: 'Space Mono', monospace;
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    font-family:var(--font-body);
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.7;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a { color:inherit; text-decoration:none; }
-  :focus-visible { outline:2px solid var(--indigo); outline-offset:3px; }
-  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-
-  .eyebrow {
-    font-family:var(--font-mono);
-    font-size:.72rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--indigo);
-    font-weight:700;
-  }
-
-  .btn {
-    display:inline-block;
-    background:var(--indigo);
-    color:var(--paper);
-    padding:17px 38px;
-    border-radius:999px;
-    font-family:var(--font-mono);
-    font-size:.78rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    font-weight:700;
-    border:none;
-    cursor:pointer;
-    transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
-  }
-  .btn:hover { background:var(--ink); transform:translateY(-2px); box-shadow:0 10px 26px rgba(22,32,43,.18); }
-
   /* rails (signature element) */
   .hero__rail, .founder__rail, .waitlist__rail { position:absolute; z-index:0; }
-  .hero__rail line, .founder__rail line, .waitlist__rail line { stroke:var(--indigo-soft); stroke-width:1.4; fill:none; }
+  .hero__rail line, .founder__rail line, .waitlist__rail line { stroke:var(--kraft); stroke-width:1.4; fill:none; }
   .hero__rail { right:5vw; top:50%; transform:translateY(-50%); width:44px; height:66%; }
   .founder__rail { left:2vw; top:60px; width:40px; height:80%; }
   .waitlist__rail { right:5vw; top:50%; transform:translateY(-50%); width:44px; height:56%; }
-
-  /* NAV */
-  .nav {
-    position:fixed; top:0; left:0; right:0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:26px 6vw;
-    background:rgba(238,235,226,.85);
-    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-  }
-  .nav__mark { font-family:var(--font-display); font-size:1.2rem; letter-spacing:.1em; font-weight:600; }
-  .nav__cta {
-    font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
-    border:1px solid var(--ink); padding:11px 20px; border-radius:999px;
-    transition:background .3s ease, color .3s ease;
-  }
-  .nav__cta:hover { background:var(--ink); color:var(--paper); }
 
   /* HERO */
   .hero {
@@ -151,22 +82,22 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
   .founder__left { position:sticky; top:140px; }
   .founder__seal {
     width:52px; height:52px; border-radius:50%;
-    border:1.5px solid var(--bronze);
+    border:1.5px solid var(--yuzu);
     display:flex; align-items:center; justify-content:center;
     margin-top:28px;
   }
-  .founder__seal span { width:8px; height:8px; border-radius:50%; background:var(--bronze); display:block; }
+  .founder__seal span { width:8px; height:8px; border-radius:50%; background:var(--yuzu); display:block; }
   .founder__quote {
     font-family:var(--font-display); font-weight:400;
     font-size:clamp(1.3rem, 2.6vw, 1.95rem); line-height:1.62;
   }
   .founder__sign {
     margin-top:30px; font-family:var(--font-mono); font-size:.74rem;
-    letter-spacing:.06em; text-transform:uppercase; color:var(--indigo-soft);
+    letter-spacing:.06em; text-transform:uppercase; color:var(--sumi-soft);
   }
 
   /* RITUAL */
-  .ritual { background:var(--paper-deep); padding:150px 8vw; }
+  .ritual { background:var(--rice-deep); padding:150px 8vw; }
   .ritual__head { text-align:center; max-width:600px; margin:0 auto 84px; }
   .ritual__head .eyebrow { margin-bottom:22px; display:inline-block; }
   .ritual__head h2 {
@@ -174,48 +105,35 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
     font-size:clamp(1.6rem, 3.2vw, 2.3rem); line-height:1.3;
   }
   .ritual__steps { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
-  .step { padding:32px 26px; border-top:1px solid var(--indigo-soft); }
+  .step { padding:32px 26px; border-top:1px solid var(--kraft); }
   .step--featured {
-    background:var(--indigo); color:var(--paper);
+    background:var(--camellia); color:var(--rice);
     border-top:none; border-radius:4px;
-    padding:40px 30px; box-shadow:0 20px 40px rgba(38,55,75,.18);
+    padding:40px 30px; box-shadow:0 20px 40px rgba(42,37,33,.18);
     transform:translateY(-14px);
   }
-  .step__num { font-family:var(--font-mono); font-size:.85rem; font-weight:700; letter-spacing:.05em; color:var(--indigo-soft); margin-bottom:18px; }
-  .step--featured .step__num { color:rgba(238,235,226,.6); }
+  .step__num { font-family:var(--font-mono); font-size:.85rem; font-weight:700; letter-spacing:.05em; color:var(--sumi-soft); margin-bottom:18px; }
+  .step--featured .step__num { color:rgba(243,238,226,.6); }
   .step__title { font-family:var(--font-display); font-size:1.25rem; font-weight:500; margin-bottom:12px; }
   .step__desc { font-size:.92rem; font-weight:300; line-height:1.7; }
-  .step--featured .step__desc { color:rgba(238,235,226,.82); }
+  .step--featured .step__desc { color:rgba(243,238,226,.82); }
 
   /* WAITLIST */
   .waitlist { position:relative; padding:160px 8vw; text-align:center; }
   .waitlist__headline { font-family:var(--font-display); font-weight:500; font-size:clamp(1.9rem,4.2vw,2.8rem); margin-bottom:20px; }
-  .waitlist__sub { max-width:440px; margin:0 auto 42px; color:rgba(22,32,43,.68); font-weight:300; }
+  .waitlist__sub { max-width:440px; margin:0 auto 42px; color:rgba(42,37,33,.68); font-weight:300; }
   .waitlist__form { position:relative; z-index:1; display:flex; gap:12px; max-width:420px; margin:0 auto; }
   .waitlist__input {
     flex:1; padding:16px 20px; border-radius:999px;
-    border:1px solid var(--indigo-soft); background:var(--paper);
-    font-family:var(--font-body); font-size:.92rem; color:var(--ink);
+    border:1px solid var(--kraft); background:var(--rice);
+    font-family:var(--font-body); font-size:.92rem; color:var(--sumi);
   }
-  .waitlist__input::placeholder { color:#9099a0; }
-  .waitlist__micro { position:relative; z-index:1; margin-top:22px; font-family:var(--font-mono); font-weight:400; font-size:.7rem; letter-spacing:.04em; color:var(--indigo-soft); text-transform:uppercase; }
-  .waitlist__success { font-family:var(--font-display); font-size:1.25rem; color:var(--indigo); padding:14px 0 4px; }
-  .waitlist__survey-prompt { margin-top:36px; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color:var(--indigo-soft); }
+  .waitlist__input::placeholder { color:#a39a8c; }
+  .waitlist__micro { position:relative; z-index:1; margin-top:22px; font-family:var(--font-mono); font-weight:400; font-size:.7rem; letter-spacing:.04em; color:var(--sumi-soft); text-transform:uppercase; }
+  .waitlist__success { font-family:var(--font-display); font-size:1.25rem; color:var(--camellia); padding:14px 0 4px; }
+  .waitlist__survey-prompt { margin-top:36px; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color:var(--sumi-soft); }
   .waitlist__chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:16px; }
-  .chip {
-    font-family:var(--font-mono); font-size:.74rem; letter-spacing:.03em;
-    padding:10px 18px; border-radius:999px; border:1px solid var(--indigo-soft);
-    background:transparent; color:var(--ink); cursor:pointer;
-    transition:background .25s ease, color .25s ease;
-  }
-  .chip:hover:not(:disabled) { background:var(--indigo); color:var(--paper); }
-  .chip:disabled { opacity:.5; cursor:default; }
-  .waitlist__chip-thanks { margin-top:20px; font-family:var(--font-display); font-size:1rem; color:var(--indigo); }
-
-  /* FOOTER */
-  footer { padding:50px 8vw; text-align:center; border-top:1px solid var(--indigo-soft); background:var(--paper-deep); }
-  footer .mark { font-family:var(--font-display); font-size:1rem; letter-spacing:.1em; margin-bottom:8px; font-weight:600; }
-  footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; letter-spacing:.03em; color:var(--indigo-soft); }
+  .waitlist__chip-thanks { margin-top:20px; font-family:var(--font-display); font-size:1rem; color:var(--camellia); }
 
   @media (max-width:960px) {
     .founder { grid-template-columns:1fr; }
@@ -238,7 +156,14 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
 <body>
 
 <nav class="nav">
-  <span class="nav__mark">YUUKI</span>
+  <a href="index.html" class="nav__mark">YUUKI</a>
+  <div class="nav__links">
+    <a href="product-kome.html" class="nav__link">KOMÉ</a>
+    <a href="product-tsubaki.html" class="nav__link">TSUBAKI</a>
+    <a href="product-yuzu.html" class="nav__link">YUZU</a>
+    <a href="quiz.html" class="nav__link">Find Your Routine</a>
+    <a href="cart.html" class="nav__cart">Cart<span class="nav__cart-count" id="navCartCount" hidden>0</span></a>
+  </div>
   <a href="#waitlist" class="nav__cta">Join the Waitlist</a>
 </nav>
 
@@ -328,6 +253,8 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
   </form>
   <p class="waitlist__micro" id="waitlistMicro">No spam. Just the reset, when it's ready.</p>
 </section>
+
+<script src="cart.js"></script>
 
 <footer>
   <div class="mark">YUUKI</div>

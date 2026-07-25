@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Routine | YUUKI</title>
+<meta name="description" content="Answer a few questions about your scalp, hair type, and climate to get matched with your YUUKI ritual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">YUUKI</a>
+  <div class="nav__links">
+    <a href="product-kome.html" class="nav__link">KOMÉ</a>
+    <a href="product-tsubaki.html" class="nav__link">TSUBAKI</a>
+    <a href="product-yuzu.html" class="nav__link">YUZU</a>
+    <a href="quiz.html" class="nav__link">Find Your Routine</a>
+    <a href="cart.html" class="nav__cart">Cart<span class="nav__cart-count" id="navCartCount" hidden>0</span></a>
+  </div>
+  <a href="index.html#waitlist" class="nav__cta">Join the Waitlist</a>
+</nav>
+
+<section class="quiz" id="quizSection">
+  <span class="eyebrow">Find Your Routine</span>
+  <div class="quiz__progress-track"><div class="quiz__progress-bar" id="progressBar"></div></div>
+  <p class="quiz__step-label" id="stepLabel"></p>
+  <div id="quizBody"></div>
+</section>
+
+<section class="results" id="resultsSection" hidden>
+  <div class="results__head" id="resultsHead"></div>
+  <div class="results__advisories" id="resultsAdvisories"></div>
+  <div class="results-grid" id="resultsGrid"></div>
+  <div class="results-actions">
+    <button type="button" class="btn" id="addAllBtn">Add All to Cart</button>
+    <button type="button" class="btn--ghost" id="retakeBtn">Retake Quiz</button>
+  </div>
+  <p class="results-note" id="addAllNote" hidden>Added to cart ✓ — pricing and checkout aren't live yet; we'll email the waitlist the moment they are.</p>
+</section>
+
+<script src="cart.js"></script>
+<script src="products.js"></script>
+<script>
+  const QUESTIONS = [
+    {
+      id: 'scalp',
+      text: 'Your scalp?',
+      type: 'single',
+      options: ['Dry & Flaky', 'More Dry', 'Balanced', 'More Oily']
+    },
+    {
+      id: 'flakeType',
+      text: 'Flake type?',
+      type: 'single',
+      options: ['Dry & Small', 'Oily & Waxy'],
+      showIf: function (answers) { return answers.scalp === 'Dry & Flaky'; }
+    },
+    {
+      id: 'hairType',
+      text: 'Your hair type?',
+      type: 'single',
+      layout: 'grid',
+      options: [
+        { value: '1', code: '1', label: 'Straight' },
+        { value: '2A', code: '2A', label: 'Subtle' },
+        { value: '2B', code: '2B', label: 'Wavy' },
+        { value: '2C', code: '2C', label: 'Textured' },
+        { value: '3A', code: '3A', label: 'Loose' },
+        { value: '3B', code: '3B', label: 'Springy' },
+        { value: '3C', code: '3C', label: 'Corkscrew' },
+        { value: '4A', code: '4A', label: 'Coily' },
+        { value: '4B', code: '4B', label: 'Zigzag' },
+        { value: '4C', code: '4C', label: 'Tight' }
+      ]
+    },
+    {
+      id: 'shed',
+      text: 'Do you shed?',
+      type: 'single',
+      options: ['No', 'Sometimes', 'Often']
+    },
+    {
+      id: 'climate',
+      text: 'Your climate?',
+      type: 'single',
+      options: ['Humid', 'Dry', 'Mixed-Seasonal', 'Cold']
+    },
+    {
+      id: 'goals',
+      text: 'Your goals?',
+      type: 'multi',
+      options: ['Reduce Flakiness', 'Reduce Oiliness', 'Enhance Curls', 'Reduce Frizz', 'Boost Moisture', 'Reduce Buildup', 'Add Shine', 'Strengthen Hair']
+    }
+  ];
+
+  let answers = {};
+  let currentIndex = 0;
+
+  function activeQuestions() {
+    return QUESTIONS.filter(function (q) { return !q.showIf || q.showIf(answers); });
+  }
+
+  function findNextIndex(fromIndex) {
+    for (let i = fromIndex + 1; i < QUESTIONS.length; i++) {
+      if (!QUESTIONS[i].showIf || QUESTIONS[i].showIf(answers)) return i;
+    }
+    return -1;
+  }
+
+  function findPrevIndex(fromIndex) {
+    for (let i = fromIndex - 1; i >= 0; i--) {
+      if (!QUESTIONS[i].showIf || QUESTIONS[i].showIf(answers)) return i;
+    }
+    return -1;
+  }
+
+  function normalizeOption(raw) {
+    return typeof raw === 'string' ? { value: raw, label: raw, code: null } : raw;
+  }
+
+  function advance() {
+    const next = findNextIndex(currentIndex);
+    if (next === -1) { showResults(); return; }
+    currentIndex = next;
+    renderQuestion();
+  }
+
+  function goBack() {
+    const prev = findPrevIndex(currentIndex);
+    if (prev === -1) return;
+    currentIndex = prev;
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentIndex];
+    const active = activeQuestions();
+    const pos = active.indexOf(q) + 1;
+    const total = active.length;
+
+    document.getElementById('progressBar').style.width = (pos / total * 100) + '%';
+    document.getElementById('stepLabel').textContent = 'Question ' + pos + ' of ' + total;
+
+    const optionsHtml = q.options.map(function (raw) {
+      const opt = normalizeOption(raw);
+      const selected = q.type === 'multi'
+        ? (answers[q.id] || []).indexOf(opt.value) !== -1
+        : answers[q.id] === opt.value;
+      const inner = opt.code
+        ? '<span class="quiz__option-code">' + opt.code + '</span>' + opt.label
+        : opt.label;
+      return '<button type="button" class="quiz__option' + (selected ? ' is-selected' : '') +
+        '" data-value="' + opt.value.replace(/"/g, '&quot;') + '">' + inner + '</button>';
+    }).join('');
+
+    let html = '<div class="quiz__question"><h2>' + q.text + '</h2>' +
+      '<div class="quiz__options' + (q.layout === 'grid' ? ' quiz__options--grid' : '') + '" id="optionsWrap">' +
+      optionsHtml + '</div>';
+
+    if (q.type === 'multi') {
+      html += '<div class="quiz__continue-wrap"><button type="button" class="btn" id="continueBtn">Continue</button></div>';
+    }
+    html += '</div>';
+
+    if (pos > 1) {
+      html += '<button type="button" class="quiz__nav-back" id="backBtn">← Back</button>';
+    }
+
+    document.getElementById('quizBody').innerHTML = html;
+
+    document.getElementById('optionsWrap').addEventListener('click', function (e) {
+      const btn = e.target.closest('.quiz__option');
+      if (!btn) return;
+      const value = btn.dataset.value;
+
+      if (q.type === 'multi') {
+        const arr = answers[q.id] || [];
+        const idx = arr.indexOf(value);
+        if (idx === -1) arr.push(value); else arr.splice(idx, 1);
+        answers[q.id] = arr;
+        btn.classList.toggle('is-selected');
+      } else {
+        answers[q.id] = value;
+        advance();
+      }
+    });
+
+    if (q.type === 'multi') {
+      document.getElementById('continueBtn').addEventListener('click', advance);
+    }
+
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) backBtn.addEventListener('click', goBack);
+  }
+
+  function showResults() {
+    document.getElementById('quizSection').hidden = true;
+    document.getElementById('resultsSection').hidden = false;
+
+    const goals = answers.goals || [];
+    const dryLeaningScalp = answers.scalp === 'Dry & Flaky' || answers.scalp === 'More Dry';
+    const dryOrColdClimate = answers.climate === 'Dry' || answers.climate === 'Cold';
+    const goalsFlakinessOrMoisture = goals.indexOf('Reduce Flakiness') !== -1 || goals.indexOf('Boost Moisture') !== -1;
+    const gentleTrigger = dryLeaningScalp || dryOrColdClimate || goalsFlakinessOrMoisture;
+    const clarifyingTrigger = goals.indexOf('Reduce Buildup') !== -1 || goals.indexOf('Reduce Oiliness') !== -1;
+
+    // An explicitly-stated goal (buildup/oiliness) outranks an inferred dryness
+    // signal (scalp/climate) when both point in different directions.
+    let coreVariant = 'default';
+    if (clarifyingTrigger) coreVariant = 'clarifying';
+    else if (gentleTrigger) coreVariant = 'gentle';
+
+    const yuzuTrigger = (answers.hairType && answers.hairType !== '1') ||
+      goals.indexOf('Enhance Curls') !== -1 || goals.indexOf('Reduce Frizz') !== -1 ||
+      answers.climate === 'Humid';
+
+    let yuzuVariant = 'default';
+    if (answers.climate === 'Humid') yuzuVariant = 'humid';
+    else if (answers.climate === 'Dry' || answers.climate === 'Cold') yuzuVariant = 'dryCold';
+
+    const recommended = [
+      { product: PRODUCTS.kome, variant: coreVariant },
+      { product: PRODUCTS.tsubaki, variant: coreVariant }
+    ];
+    if (yuzuTrigger) recommended.push({ product: PRODUCTS.yuzu, variant: yuzuVariant });
+
+    const advisories = [];
+    if (answers.flakeType === 'Oily & Waxy') {
+      advisories.push('Oily, waxy flakes are often a scalp-health issue a cosmetic rinse won’t resolve on its own — worth a quick check with a dermatologist alongside your routine.');
+    }
+    if (answers.shed === 'Often') {
+      advisories.push('Frequent shedding is worth discussing with a dermatologist — this line is a scalp and styling ritual, not a hair-loss treatment.');
+    }
+
+    renderResults(recommended, advisories);
+  }
+
+  function renderResults(recommended, advisories) {
+    document.getElementById('resultsHead').innerHTML =
+      '<span class="eyebrow">Your Routine</span><h1>Built for your hair and scalp.</h1>';
+
+    document.getElementById('resultsAdvisories').innerHTML = advisories.map(function (text) {
+      return '<div class="advisory"><span>⚠</span><span>' + text + '</span></div>';
+    }).join('');
+
+    const grid = document.getElementById('resultsGrid');
+    grid.innerHTML = recommended.map(function (r) {
+      const p = r.product;
+      const rationale = p.descriptions[r.variant] || p.descriptions.default;
+      const ingredientsHtml = (p.ingredients && p.ingredients.length)
+        ? '<ul class="ingredients-list">' + p.ingredients.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>'
+        : '<p class="ingredients-empty">Full ingredient list coming soon.</p>';
+      return '<div class="card product-card">' +
+        '<span class="product-card__step">' + p.step + '</span>' +
+        '<h3 class="product-card__name"><a href="' + p.url + '">' + p.name + '</a></h3>' +
+        '<p class="product-card__rationale">' + rationale + '</p>' +
+        '<button type="button" class="product-card__toggle" data-id="' + p.id + '">+ View Ingredients</button>' +
+        '<div class="product-card__ingredients" id="ingredients-' + p.id + '">' + ingredientsHtml + '</div>' +
+      '</div>';
+    }).join('');
+
+    grid.querySelectorAll('.product-card__toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const panel = document.getElementById('ingredients-' + btn.dataset.id);
+        const open = panel.classList.toggle('is-open');
+        btn.textContent = (open ? '− Hide' : '+ View') + ' Ingredients';
+      });
+    });
+
+    document.getElementById('addAllBtn').onclick = function () {
+      cartAddMany(recommended.map(function (r) { return r.product.id; }));
+      document.getElementById('addAllNote').hidden = false;
+    };
+  }
+
+  document.getElementById('retakeBtn').addEventListener('click', function () {
+    answers = {};
+    currentIndex = 0;
+    document.getElementById('resultsSection').hidden = true;
+    document.getElementById('quizSection').hidden = false;
+    document.getElementById('addAllNote').hidden = true;
+    renderQuestion();
+  });
+
+  renderQuestion();
+</script>
+
+<footer>
+  <div class="mark">YUUKI</div>
+  <p class="copy">© 2026 YUUKI. A Japanese-inspired scalp ritual, reset for the modern shower.</p>
+</footer>
+
+</body>
+</html>
