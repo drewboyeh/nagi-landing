@@ -1,8 +1,7 @@
 // Single source of truth for product names/copy — product pages, the quiz,
 // and the cart all read from this instead of hardcoding names anywhere.
 //
-// price and ingredients are intentionally left blank/TBD — real pricing and
-// exact formulas need to come from you rather than being invented here.
+// price is intentionally left blank/TBD until real pricing is set.
 const PRODUCTS = {
   kome: {
     id: 'kome',
@@ -18,7 +17,15 @@ const PRODUCTS = {
       gentle: 'A soft, rice-water cleanse that lifts residue without stripping — built for a scalp that needs less roughing up, not more.',
       clarifying: 'A thorough first pass that breaks down buildup and excess oil at the root, so nothing gets trapped under the next step.'
     },
-    ingredients: []
+    ingredients: [
+      'Fermented Rice Water',
+      'Decyl Glucoside (coconut-derived cleanser)',
+      'Water',
+      'Camellia (Tsubaki) Oil',
+      'Sodium PCA (moisture-binding)',
+      'Yuzu Essential Oil',
+      'Geogard ECT (preservative)'
+    ]
   },
   tsubaki: {
     id: 'tsubaki',
@@ -34,7 +41,16 @@ const PRODUCTS = {
       gentle: 'A rich, camellia-oil-forward conditioner that nourishes a dry or flaky scalp without the heavy, weighed-down feeling of mass-market formulas.',
       clarifying: 'A light-weight conditioner that softens without re-coating the scalp in the residue you just cleansed away.'
     },
-    ingredients: []
+    ingredients: [
+      'Fermented Rice Water',
+      'Water',
+      'Camellia (Tsubaki) Oil',
+      'Cetearyl Alcohol (fatty conditioning alcohol, not drying)',
+      'BTMS-50 (plant-derived conditioning emulsifier)',
+      'Vegetable Glycerin',
+      'Yuzu Essential Oil',
+      'Geogard ECT (preservative)'
+    ]
   },
   yuzu: {
     id: 'yuzu',
@@ -50,6 +66,16 @@ const PRODUCTS = {
       humid: 'Built for humidity — a leave-in yuzu cream that holds curl definition and blocks frizz even when the air outside won’t cooperate.',
       dryCold: 'A protective leave-in for dry or cold air, sealing in moisture so curls stay defined instead of static and brittle.'
     },
-    ingredients: []
+    ingredients: [
+      'Water',
+      'Camellia (Tsubaki) Oil',
+      'Cetearyl Alcohol',
+      'BTMS-50',
+      'Vegetable Glycerin',
+      'Hydrolyzed Rice Protein',
+      'Konjac Root Extract',
+      'Yuzu Essential Oil',
+      'Geogard ECT (preservative)'
+    ]
   }
 };
