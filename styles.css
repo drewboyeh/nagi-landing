@@ -136,6 +136,37 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
 }
 .advisory strong { font-family:var(--font-display); font-weight:600; }
 
+/* LINE TABS */
+.line-tabs-wrap { padding:150px 8vw 0; }
+.line-tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; max-width:700px; margin:0 auto; }
+.line-tab {
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+  padding:10px 20px; border-radius:999px; border:1px solid var(--kraft); background:transparent; color:var(--sumi);
+  cursor:pointer; transition:background .2s ease, color .2s ease, border-color .2s ease;
+  display:flex; align-items:center; gap:6px;
+}
+.line-tab:hover { border-color:var(--camellia); }
+.line-tab.is-active { background:var(--camellia); border-color:var(--camellia); color:var(--rice); }
+.line-tab__soon { font-size:.6rem; opacity:.7; }
+.tab-panel[hidden] { display:none; }
+.tab-panel .product-hero { padding-top:60px; }
+
+/* COMING SOON */
+.coming-soon { max-width:520px; margin:0 auto; padding:60px 8vw 120px; text-align:center; }
+.coming-soon__badge {
+  display:inline-block; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--yuzu); border:1px solid var(--yuzu); border-radius:999px; padding:6px 16px; margin-bottom:26px;
+}
+.coming-soon__placeholder {
+  width:160px; height:240px; margin:0 auto 30px; border:1.5px dashed var(--kraft); border-radius:14px;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--sumi-soft);
+  line-height:1.6;
+}
+.coming-soon__name { font-family:var(--font-display); font-weight:500; font-size:clamp(1.6rem,3.6vw,2.2rem); margin-bottom:10px; }
+.coming-soon__tagline { color:var(--sumi-soft); margin-bottom:18px; }
+.coming-soon__note { font-size:.88rem; color:rgba(42,37,33,.7); }
+
 /* PRODUCT PAGE */
 .product-hero {
   padding:160px 8vw 100px; max-width:1100px; margin:0 auto;
