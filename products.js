@@ -2,6 +2,17 @@
 // and the cart all read from this instead of hardcoding names anywhere.
 const RITUAL_SET_PRICE = 94; // KOMÉ + TSUBAKI + YUZU together, vs $104 bought separately
 
+// Stripe test-mode Payment Links (sandbox — no real charges).
+const PAYMENT_LINKS = {
+  kome: 'https://buy.stripe.com/test_9B67sDfClgdx1M03o13Nm00',
+  tsubaki: 'https://buy.stripe.com/test_14AaEPbm5aTd1M06Ad3Nm01',
+  yuzu: 'https://buy.stripe.com/test_7sY28j89TgdxeyM0bP3Nm02'
+};
+
+// Single combined link (all 3 as adjustable-quantity line items) used for
+// the cart's one-button checkout, so customers don't check out item by item.
+const CART_CHECKOUT_LINK = 'https://buy.stripe.com/test_00w8wHeyh0ez3U88Il3Nm03';
+
 const PRODUCTS = {
   kome: {
     id: 'kome',

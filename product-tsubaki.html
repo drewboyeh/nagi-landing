@@ -76,6 +76,7 @@
       <p class="product-hero__price" id="productPrice"></p>
       <div class="product-hero__actions">
         <button class="btn" id="addToCartBtn">Add to Cart</button>
+        <a class="btn--ghost" id="checkoutLink" href="#" target="_blank" rel="noopener">Checkout (Test Mode)</a>
         <span class="product-hero__added" id="addedNote">Added ✓</span>
       </div>
     </div>
@@ -128,6 +129,13 @@
   const product = PRODUCTS.tsubaki;
   document.getElementById('productDesc').textContent = product.descriptions.default;
   document.getElementById('productPrice').textContent = formatPrice(product.price);
+
+  const checkoutLink = document.getElementById('checkoutLink');
+  if (PAYMENT_LINKS[product.id]) {
+    checkoutLink.href = PAYMENT_LINKS[product.id];
+  } else {
+    checkoutLink.hidden = true;
+  }
 
   const ingredientsWrap = document.getElementById('ingredientsWrap');
   if (product.ingredients && product.ingredients.length) {
