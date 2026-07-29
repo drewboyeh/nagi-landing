@@ -163,6 +163,7 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
   font-family:var(--font-mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--sumi-soft);
   line-height:1.6;
 }
+.coming-soon__art { display:block; margin:0 auto 30px; }
 .coming-soon__name { font-family:var(--font-display); font-weight:500; font-size:clamp(1.6rem,3.6vw,2.2rem); margin-bottom:10px; }
 .coming-soon__tagline { color:var(--sumi-soft); margin-bottom:18px; }
 .coming-soon__note { font-size:.88rem; color:rgba(42,37,33,.7); }
