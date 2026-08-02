@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5in" height="2.5in" viewBox="0 0 1500 750" role="img"
+     aria-label="YUUKI YUZU Curl Spray wrap label, 4 fl oz / 120 mL">
+  <!--
+    YUZU Curl Spray - wrap label for 4 oz / 120 mL HDPE cylinder bottle.
+    Trim size 5.0 x 2.5 in at 300 dpi (1500 x 750 px).
+    Bottle circumference is about 5.8 in, so a 5 in label wraps with an
+    intentional gap at the back rather than overlapping.
+
+    LEFT PANEL  (x 0-740)   = principal display panel: identity + net contents
+    RIGHT PANEL (x 760-1500) = ingredients, directions, responsible person
+
+    Before sending to a commercial printer:
+      - add 0.125 in bleed on all sides (extend the background rect)
+      - convert all text to outlines/paths
+      - confirm the ingredient declaration against supplier component
+        breakdowns for the solubilizer blend
+  -->
+  <defs>
+    <style>
+      .serif { font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; }
+      .sans  { font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif; }
+      .ink   { fill: #2A2521; }
+      .muted { fill: #5F5A4E; }
+    </style>
+  </defs>
+
+  <!-- paper -->
+  <rect width="1500" height="750" fill="#F3EEE2"/>
+
+  <!-- crimson rules, echoing the bottle art -->
+  <rect x="0" y="0" width="1500" height="5" fill="#9C2B3B"/>
+  <rect x="0" y="745" width="1500" height="5" fill="#9C2B3B"/>
+
+  <!-- panel divider -->
+  <line x1="750" y1="60" x2="750" y2="690" stroke="#D9CDB4" stroke-width="2"/>
+
+  <!-- ============ FRONT PANEL ============ -->
+  <text x="370" y="95" text-anchor="middle" class="sans muted" font-size="26" letter-spacing="11">YUUKI</text>
+
+  <!-- wave motif from the bottle art, scaled up -->
+  <g transform="translate(370,175) scale(2.6)" stroke="#9C2B3B" fill="none" stroke-width="1.3"
+     stroke-linecap="round" opacity="0.55">
+    <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
+    <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3" opacity="0.65"/>
+  </g>
+
+  <text x="370" y="360" text-anchor="middle" class="serif ink"><tspan font-size="118">YUZU</tspan><tspan font-size="50" class="muted" dx="18">柚子</tspan></text>
+
+  <text x="370" y="425" text-anchor="middle" class="sans muted" font-size="27" letter-spacing="9">CURL SPRAY</text>
+
+  <line x1="235" y1="475" x2="505" y2="475" stroke="#D9CDB4" stroke-width="2"/>
+
+  <text x="370" y="540" text-anchor="middle" class="sans muted" font-size="21" letter-spacing="1.5">Defines curl. Blocks frizz.</text>
+  <text x="370" y="573" text-anchor="middle" class="sans muted" font-size="21" letter-spacing="1.5">No crunch.</text>
+
+  <!-- net contents: FDA requires this in the lower 30% of the display panel -->
+  <text x="370" y="675" text-anchor="middle" class="sans ink" font-size="25" letter-spacing="1">Net 4 fl oz / 120 mL</text>
+
+  <!-- ============ BACK PANEL ============ -->
+  <text x="800" y="92" class="sans ink" font-size="19" letter-spacing="4">INGREDIENTS</text>
+  <g class="sans muted" font-size="14.5">
+    <text x="800" y="128">Water (Aqua), Rice (Oryza Sativa) Ferment Filtrate,</text>
+    <text x="800" y="152">Hydrolyzed Rice Protein, Caprylyl/Capryl Glucoside,</text>
+    <text x="800" y="176">Gluconolactone, Sodium Benzoate, Yuzu (Citrus Junos)</text>
+    <text x="800" y="200">Peel Oil, Konjac (Amorphophallus Konjac) Root Extract,</text>
+    <text x="800" y="224">Sodium Phytate, Citric Acid, Calcium Gluconate.</text>
+  </g>
+
+  <text x="800" y="292" class="sans ink" font-size="19" letter-spacing="4">DIRECTIONS</text>
+  <g class="sans muted" font-size="14.5">
+    <text x="800" y="328">Shake well. Mist evenly through damp hair, scrunch,</text>
+    <text x="800" y="352">and air dry or diffuse. Use daily as the final step.</text>
+  </g>
+
+  <text x="800" y="420" class="sans ink" font-size="19" letter-spacing="4">CAUTION</text>
+  <g class="sans muted" font-size="14.5">
+    <text x="800" y="456">For external use only. Avoid contact with eyes; if</text>
+    <text x="800" y="480">contact occurs, rinse thoroughly with water.</text>
+    <text x="800" y="504">Discontinue use if irritation occurs.</text>
+  </g>
+
+  <line x1="800" y1="548" x2="1440" y2="548" stroke="#D9CDB4" stroke-width="2"/>
+
+  <!-- Responsible Person block. MoCRA requires a domestic address, phone,
+       or electronic contact for adverse event reports. -->
+  <g class="sans muted" font-size="14.5">
+    <text x="800" y="588">Distributed by YUUKI</text>
+    <text x="800" y="612">[street address], [city, state ZIP]</text>
+    <text x="800" y="636">yuukihealth.com · [contact email]</text>
+    <text x="800" y="674" font-size="13">Made in USA · Batch ____ · Best by ____</text>
+  </g>
+</svg>
