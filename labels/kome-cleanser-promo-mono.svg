@@ -45,8 +45,10 @@
 
   <rect x="290" y="372" width="170" height="1.3" fill="#000000"/>
 
-  <!-- tagline pulled verbatim from products.js so the label matches the site -->
-  <text x="375" y="424" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">The purifying rice-water wash.</text>
+  <!-- "RICE WATER CLEANSE" already states what it is, so the tagline does a
+       different job: the sensory/ritual beat, echoing the site footer's
+       "ritual reset" language instead of restating rice-water-wash again. -->
+  <text x="375" y="424" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">A refreshing scalp reset.</text>
 
   <text x="375" y="468" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">Net 8 fl oz / 227 mL</text>
 </svg>
