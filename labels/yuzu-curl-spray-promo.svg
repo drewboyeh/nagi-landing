@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3in" height="2.25in" viewBox="0 0 900 675" role="img"
+     aria-label="YUUKI YUZU Curl Spray front label for photography">
+  <!--
+    YUZU Curl Spray - FRONT-ONLY label for marketing photography.
+    Trim 3.0 x 2.25 in at 300 dpi (900 x 675 px).
+
+    This is a photo prop, not a compliant retail label. It deliberately
+    omits the ingredient declaration, directions and Responsible Person
+    block. For anything actually sold, use yuzu-curl-spray-120ml.svg.
+
+    Fits the front face of a 4 oz HDPE cylinder (~1.85 in dia). Sits as
+    a partial wrap so the full design stays visible head-on in a shot.
+  -->
+  <defs>
+    <style>
+      .serif { font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; }
+      .sans  { font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif; }
+      .ink   { fill: #2A2521; }
+      .muted { fill: #5F5A4E; }
+    </style>
+  </defs>
+
+  <rect width="900" height="675" fill="#F3EEE2"/>
+  <rect x="0" y="0" width="900" height="5" fill="#9C2B3B"/>
+  <rect x="0" y="670" width="900" height="5" fill="#9C2B3B"/>
+
+  <text x="450" y="88" text-anchor="middle" class="sans ink" font-size="46" letter-spacing="16">YUUKI</text>
+
+  <g transform="translate(450,172) scale(2.1)" stroke="#9C2B3B" fill="none" stroke-width="1.5"
+     stroke-linecap="round" opacity="0.55">
+    <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
+    <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3" opacity="0.65"/>
+  </g>
+
+  <text x="450" y="315" text-anchor="middle" class="serif ink"><tspan font-size="104">YUZU</tspan><tspan font-size="44" class="muted" dx="16">柚子</tspan></text>
+
+  <text x="450" y="375" text-anchor="middle" class="sans muted" font-size="24" letter-spacing="8">CURL SPRAY</text>
+
+  <line x1="330" y1="422" x2="570" y2="422" stroke="#D9CDB4" stroke-width="2"/>
+
+  <text x="450" y="480" text-anchor="middle" class="sans muted" font-size="19" letter-spacing="1.5">Defines curl. Blocks frizz.</text>
+  <text x="450" y="509" text-anchor="middle" class="sans muted" font-size="19" letter-spacing="1.5">No crunch.</text>
+
+  <text x="450" y="605" text-anchor="middle" class="sans ink" font-size="22" letter-spacing="1">Net 4 fl oz / 120 mL</text>
+</svg>

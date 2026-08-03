@@ -20,7 +20,7 @@ const PRODUCTS = {
     japanese: 'コメ',
     role: 'Wash',
     step: 'Step 1 · Cleanse',
-    tagline: 'The purifying rice-water wash.',
+    tagline: 'A refreshing scalp reset.',
     url: 'product-kome.html',
     price: 32,
     descriptions: {
