@@ -31,9 +31,9 @@
   <rect x="0" y="0" width="900" height="4" fill="#000000"/>
   <rect x="0" y="671" width="900" height="4" fill="#000000"/>
 
-  <text x="450" y="80" text-anchor="middle" class="sans k" font-size="22" letter-spacing="11">YUUKI</text>
+  <text x="450" y="88" text-anchor="middle" class="sans k" font-size="46" letter-spacing="16">YUUKI</text>
 
-  <g transform="translate(450,150) scale(2.3)" stroke="#000000" fill="none" stroke-width="0.9"
+  <g transform="translate(450,172) scale(2.1)" stroke="#000000" fill="none" stroke-width="1.0"
      stroke-linecap="round">
     <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
     <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3"/>

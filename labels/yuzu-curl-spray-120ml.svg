@@ -35,10 +35,10 @@
   <line x1="750" y1="60" x2="750" y2="690" stroke="#D9CDB4" stroke-width="2"/>
 
   <!-- ============ FRONT PANEL ============ -->
-  <text x="370" y="95" text-anchor="middle" class="sans muted" font-size="26" letter-spacing="11">YUUKI</text>
+  <text x="370" y="100" text-anchor="middle" class="sans ink" font-size="46" letter-spacing="16">YUUKI</text>
 
   <!-- wave motif from the bottle art, scaled up -->
-  <g transform="translate(370,175) scale(2.6)" stroke="#9C2B3B" fill="none" stroke-width="1.3"
+  <g transform="translate(370,185) scale(2.3)" stroke="#9C2B3B" fill="none" stroke-width="1.45"
      stroke-linecap="round" opacity="0.55">
     <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
     <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3" opacity="0.65"/>
