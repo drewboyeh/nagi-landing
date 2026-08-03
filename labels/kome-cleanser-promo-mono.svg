@@ -45,9 +45,8 @@
 
   <rect x="290" y="372" width="170" height="1.3" fill="#000000"/>
 
-  <!-- tagline dropped: at 2.5 x 1.75 in there is not room for a readable
-       brand mark and a tagline, and "RICE WATER CLEANSE" already says
-       what the product is. -->
+  <!-- tagline pulled verbatim from products.js so the label matches the site -->
+  <text x="375" y="424" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">The purifying rice-water wash.</text>
 
-  <text x="375" y="455" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">Net 8 fl oz / 227 mL</text>
+  <text x="375" y="468" text-anchor="middle" class="sans k" font-size="17" letter-spacing="1">Net 8 fl oz / 227 mL</text>
 </svg>
