@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3in" height="2.25in" viewBox="0 0 900 675" role="img"
+     aria-label="YUUKI YUZU Curl Spray front label, monochrome edition">
+  <!--
+    YUZU Curl Spray - FRONT label, MONOCHROME edition.
+    Trim 3.0 x 2.25 in at 300 dpi (900 x 675 px).
+
+    Built for a black-and-white laser printer (Brother HL-L2370DW) on
+    cream or natural sticker stock:
+
+      - NO background fill. The paper supplies the colour, so there is
+        no large toner field to band or curl the sheet.
+      - Pure black only. No greys, no opacity, no tints. A mono laser
+        renders those as halftone dot patterns, which are visible and
+        ugly at this size.
+      - Hierarchy comes from size, weight and letterspacing instead of
+        colour.
+
+    Print at 100% / "Actual size". Do not use fit-to-page.
+    Colour original: yuzu-curl-spray-promo.svg
+  -->
+  <defs>
+    <style>
+      .serif { font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; }
+      .sans  { font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif; }
+      .k     { fill: #000000; }
+    </style>
+  </defs>
+
+  <!-- no background rect: the stock is the background -->
+
+  <rect x="0" y="0" width="900" height="4" fill="#000000"/>
+  <rect x="0" y="671" width="900" height="4" fill="#000000"/>
+
+  <text x="450" y="80" text-anchor="middle" class="sans k" font-size="22" letter-spacing="11">YUUKI</text>
+
+  <g transform="translate(450,150) scale(2.3)" stroke="#000000" fill="none" stroke-width="0.9"
+     stroke-linecap="round">
+    <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
+    <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3"/>
+  </g>
+
+  <text x="450" y="315" text-anchor="middle" class="serif k"><tspan font-size="104">YUZU</tspan><tspan font-size="40" dx="18">柚子</tspan></text>
+
+  <text x="450" y="375" text-anchor="middle" class="sans k" font-size="23" letter-spacing="8">CURL SPRAY</text>
+
+  <rect x="360" y="421" width="180" height="1.5" fill="#000000"/>
+
+  <text x="450" y="480" text-anchor="middle" class="sans k" font-size="18" letter-spacing="1.5">Defines curl. Blocks frizz.</text>
+  <text x="450" y="508" text-anchor="middle" class="sans k" font-size="18" letter-spacing="1.5">No crunch.</text>
+
+  <text x="450" y="605" text-anchor="middle" class="sans k" font-size="21" letter-spacing="1">Net 4 fl oz / 120 mL</text>
+</svg>
