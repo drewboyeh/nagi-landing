@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img"
+     aria-label="YUUKI KOME rice water cleanse, social product image">
+  <!--
+    KOME - Instagram-square (1:1) product hero, 1080 x 1080.
+
+    Built as vector art in the site's own illustrated-bottle style rather
+    than attempting a photorealistic mockup - the brand's visual language
+    (product-kome.html, product-yuzu.html) is flat/line-art illustration,
+    not photography, so a fake-photoreal composite would read as
+    off-brand even if it were convincing.
+
+    Bottle path data, palette (--rice/--sumi/--camellia/--yuzu/--kraft),
+    and type treatment are copied from styles.css and product-kome.html's
+    inline bottle SVG rather than reinvented, so this matches the live
+    site exactly:
+      YUUKI wordmark  -> Shippori Mincho, weight 600, tracked   (.nav__mark / footer .mark)
+      Step eyebrow    -> Space Mono, uppercase, tracked, sumi-soft (.eyebrow)
+      Product name    -> Shippori Mincho, weight 500            (.product-hero__name)
+      Tagline         -> Zen Kaku Gothic New, sumi-soft          (.product-hero__tagline)
+
+    Tagline text matches products.js / product-kome.html as of the
+    "refreshing scalp reset" copy update - keep these in sync if the
+    site copy changes again.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3EEE2"/>
+      <stop offset="100%" stop-color="#EAE2D2"/>
+    </linearGradient>
+    <linearGradient id="glassKome" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1E4278"/>
+      <stop offset="45%" stop-color="#2C5490"/>
+      <stop offset="100%" stop-color="#1B3B6E"/>
+    </linearGradient>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <style>
+      .display { font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; }
+      .body    { font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif; }
+      .mono    { font-family: "Space Mono", "Courier New", monospace; }
+      .sumi      { fill: #2A2521; }
+      .sumi-soft { fill: #8A8175; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- brand header -->
+  <text x="540" y="122" text-anchor="middle" class="display sumi" font-size="34" font-weight="600" letter-spacing="4.2">YUUKI</text>
+  <text x="540" y="164" text-anchor="middle" class="mono sumi-soft" font-size="16" letter-spacing="1.6">STEP 1 &#183; CLEANSE</text>
+
+  <!-- ground shadow -->
+  <ellipse cx="540" cy="870" rx="185" ry="24" fill="#2A2521" opacity="0.14" filter="url(#shadowBlur)"/>
+
+  <!-- bottle, from product-kome.html's inline art, viewBox 220x420, scaled 1.55x -->
+  <g transform="translate(370,235) scale(1.55)">
+    <rect x="95" y="10" width="30" height="14" rx="3" fill="#152F58"/>
+    <rect x="102" y="0" width="16" height="14" rx="4" fill="#1C1916"/>
+    <rect x="90" y="24" width="40" height="26" fill="url(#glassKome)" stroke="#122748" stroke-width="1"/>
+    <path d="M90 50 C90 66, 60 70, 60 100 L60 360 C60 378, 76 392, 110 392 C144 392, 160 378, 160 360 L160 100 C160 70, 130 66, 130 50 Z"
+      fill="url(#glassKome)" stroke="#122748" stroke-width="1.5"/>
+    <rect x="60" y="150" width="100" height="150" fill="#F3EEE2" stroke="#D9CDB4" stroke-width="1" opacity="0.96"/>
+    <line x1="60" y1="164" x2="160" y2="164" stroke="#9C2B3B" stroke-width="1.5"/>
+    <line x1="60" y1="286" x2="160" y2="286" stroke="#9C2B3B" stroke-width="1.5"/>
+    <g transform="translate(110,205)" stroke="#9C2B3B" fill="none" stroke-width="1.6" stroke-linecap="round">
+      <circle r="5" fill="#9C2B3B" stroke="none"/>
+      <path d="M0,0 C-14,-10 -16,-24 -4,-30 C4,-34 14,-26 10,-14 C7,-6 2,-2 0,0"/>
+      <path d="M0,0 C14,-10 16,-24 4,-30 C-4,-34 -14,-26 -10,-14 C-7,-6 -2,-2 0,0" opacity="0.7"/>
+      <path d="M0,0 C-12,8 -8,20 4,20 C14,20 16,8 6,2" opacity="0.5"/>
+    </g>
+    <text x="110" y="245" text-anchor="middle" class="display" fill="#2A2521"><tspan font-size="17">KOM&#201; </tspan><tspan font-size="11" fill="#8a8175">&#12467;&#12513;</tspan></text>
+    <text x="110" y="262" text-anchor="middle" class="body" font-size="8.5" letter-spacing="1.5" fill="#8a8175">RICE WATER CLEANSE</text>
+    <text x="110" y="330" text-anchor="middle" class="body" font-size="7" fill="#8a8175">YUUKI</text>
+    <text x="110" y="342" text-anchor="middle" class="body" font-size="6.2" fill="#a39a8c">227 mL / 8 fl oz</text>
+  </g>
+
+  <!-- product identity -->
+  <text x="540" y="945" text-anchor="middle" class="display sumi"><tspan font-size="80" font-weight="500">KOM&#201;</tspan><tspan font-size="36" dx="20" class="sumi-soft">&#12467;&#12513;</tspan></text>
+
+  <rect x="465" y="978" width="150" height="1.5" fill="#D9CDB4"/>
+
+  <text x="540" y="1024" text-anchor="middle" class="body sumi-soft" font-size="26">A refreshing scalp reset.</text>
+</svg>
