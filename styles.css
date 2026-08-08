@@ -274,6 +274,24 @@ footer .copy { font-family:var(--font-mono); font-weight:400; font-size:.68rem; 
 .results-actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:center; text-align:center; }
 .results-note { text-align:center; margin-top:16px; font-family:var(--font-mono); font-size:.72rem; color:var(--sumi-soft); }
 
+/* Waitlist capture on the quiz results page */
+.results-capture { margin-top:56px; padding-top:44px; border-top:1px solid var(--kraft); text-align:center; }
+.results-capture__headline { font-family:var(--font-display); font-weight:500; font-size:clamp(1.3rem,3vw,1.7rem); margin-bottom:12px; }
+.results-capture__sub { max-width:400px; margin:0 auto 28px; color:rgba(42,37,33,.68); font-weight:300; font-size:.95rem; }
+.results-capture .waitlist__form { display:flex; gap:12px; max-width:420px; margin:0 auto; }
+.results-capture .waitlist__input {
+  flex:1; padding:16px 20px; border-radius:999px;
+  border:1px solid var(--kraft); background:var(--rice);
+  font-family:var(--font-body); font-size:.92rem; color:var(--sumi);
+}
+.results-capture .waitlist__input::placeholder { color:#a39a8c; }
+.results-capture .waitlist__micro { margin-top:20px; font-family:var(--font-mono); font-weight:400; font-size:.7rem; letter-spacing:.04em; color:var(--sumi-soft); text-transform:uppercase; }
+.results-capture .waitlist__success { font-family:var(--font-display); font-size:1.2rem; color:var(--camellia); padding:14px 0 4px; }
+
+@media (max-width:520px) {
+  .results-capture .waitlist__form { flex-direction:column; }
+}
+
 @media (max-width:520px) {
   .quiz__options--grid { grid-template-columns:repeat(2,1fr); }
 }
