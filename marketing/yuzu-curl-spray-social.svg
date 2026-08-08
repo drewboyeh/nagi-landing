@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img"
+     aria-label="YUUKI YUZU Curl Spray, social product image">
+  <!--
+    YUZU Curl Spray - Instagram-square (1:1) product hero, 1080 x 1080.
+
+    Companion to kome-cleanser-social.svg; see that file's header for the
+    general approach (illustrated, not photoreal, matching the site's own
+    visual language) and where the type/colour choices come from.
+
+    This one carries a COMING SOON badge rather than a step eyebrow,
+    matching product-yuzu.html's actual coming-soon panel exactly - the
+    Curl Spray formula has not been mixed or tested yet as of this asset,
+    so the marketing treatment should not imply it's available. Swap the
+    badge for a step eyebrow (see the KOME file) once that's no longer true.
+
+    Bottle path data is copied from product-yuzu.html's coming-soon SVG
+    (the frosted-glass concept art, viewBox 220x420).
+
+    Tagline matches the existing YUZU labels (yuzu-curl-spray-120ml.svg,
+    yuzu-curl-spray-promo-mono.svg) rather than the longer sentence in
+    product-yuzu.html's coming-soon copy, so print and social say the
+    same thing in the same voice.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3EEE2"/>
+      <stop offset="100%" stop-color="#EAE2D2"/>
+    </linearGradient>
+    <linearGradient id="frostGlass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#EDEAE0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#DAD5C8" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="liquidFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3EEDD" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#EDE4C8" stop-opacity="0.85"/>
+    </linearGradient>
+    <clipPath id="bottleClipYuzuSpray">
+      <path d="M85,26 C85,38 68,44 68,68 L68,354 C68,376 86,392 110,392 C134,392 152,376 152,354 L152,68 C152,44 135,38 135,26 Z"/>
+    </clipPath>
+    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <style>
+      .display { font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif; }
+      .body    { font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif; }
+      .mono    { font-family: "Space Mono", "Courier New", monospace; }
+      .sumi      { fill: #2A2521; }
+      .sumi-soft { fill: #8A8175; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- brand header -->
+  <text x="540" y="122" text-anchor="middle" class="display sumi" font-size="34" font-weight="600" letter-spacing="4.2">YUUKI</text>
+
+  <!-- coming soon badge, matching .coming-soon__badge exactly: yuzu-gold pill -->
+  <rect x="453" y="140" width="174" height="40" rx="20" fill="none" stroke="#C99A22" stroke-width="1.3"/>
+  <text x="540" y="166" text-anchor="middle" class="mono" font-size="15" letter-spacing="1.6" fill="#C99A22">COMING SOON</text>
+
+  <!-- ground shadow -->
+  <ellipse cx="540" cy="855" rx="150" ry="22" fill="#2A2521" opacity="0.13" filter="url(#shadowBlur)"/>
+
+  <!-- bottle, from product-yuzu.html's coming-soon art, viewBox 220x420, scaled 1.55x -->
+  <g transform="translate(370,230) scale(1.55)">
+    <rect x="100" y="0" width="14" height="8" rx="2" fill="#1C1916"/>
+    <rect x="114" y="2" width="16" height="5" rx="2.5" fill="#1C1916"/>
+    <rect x="96" y="8" width="28" height="18" fill="url(#frostGlass)" stroke="#B8AD9C" stroke-width="1"/>
+    <path d="M85,26 C85,38 68,44 68,68 L68,354 C68,376 86,392 110,392 C134,392 152,376 152,354 L152,68 C152,44 135,38 135,26 Z"
+      fill="url(#frostGlass)" stroke="#B8AD9C" stroke-width="1.2"/>
+    <rect x="68" y="150" width="84" height="220" fill="url(#liquidFill)" clip-path="url(#bottleClipYuzuSpray)"/>
+    <line x1="70" y1="150" x2="150" y2="150" stroke="#D9CDB4" stroke-width="1" opacity="0.6"/>
+    <g transform="translate(110,100)" stroke="#9C2B3B" fill="none" stroke-width="1.2" stroke-linecap="round" opacity="0.55">
+      <path d="M-20,-6 C-13,-13 -7,0 0,-6 C7,-13 13,0 20,-6"/>
+      <path d="M-20,3 C-13,-4 -7,9 0,3 C7,-4 13,9 20,3" opacity="0.65"/>
+    </g>
+    <rect x="66" y="290" width="88" height="66" fill="#D9CDB4" opacity="0.92"/>
+    <rect x="66" y="290" width="88" height="1.5" fill="#9C2B3B"/>
+    <text x="98" y="318" text-anchor="middle" class="display" fill="#2A2521"><tspan font-size="15">YUZU </tspan><tspan font-size="10" fill="#5F5A4E">&#26759;&#23376;</tspan></text>
+    <text x="98" y="333" text-anchor="middle" class="body" font-size="6.6" letter-spacing="0.8" fill="#5F5A4E">CURL SPRAY</text>
+    <text x="130" y="348" text-anchor="middle" class="body" font-size="6" fill="#5F5A4E">250 mL / 8.5 fl oz</text>
+  </g>
+
+  <!-- product identity -->
+  <text x="540" y="925" text-anchor="middle" class="display sumi"><tspan font-size="80" font-weight="500">YUZU</tspan><tspan font-size="36" dx="20" class="sumi-soft">&#26759;&#23376;</tspan></text>
+
+  <text x="540" y="968" text-anchor="middle" class="body sumi-soft" font-size="24" letter-spacing="3">CURL SPRAY</text>
+
+  <rect x="465" y="1000" width="150" height="1.5" fill="#D9CDB4"/>
+
+  <text x="540" y="1044" text-anchor="middle" class="body sumi-soft" font-size="24">Defines curl. Blocks frizz. No crunch.</text>
+</svg>

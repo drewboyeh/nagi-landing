@@ -52,6 +52,22 @@
     <button type="button" class="btn--ghost" id="retakeBtn">Retake Quiz</button>
   </div>
   <p class="results-note" id="addAllNote" hidden>Added to cart ✓ — checkout isn't live yet; we'll email the waitlist the moment it is.</p>
+
+  <!-- Capture at the results page rather than sending people back to
+       index.html#waitlist. This is the highest-intent moment in the funnel:
+       they've just answered questions about their hair and are looking at a
+       personalised answer. The quiz responses ride along with the email so
+       the list is segmented from day one. -->
+  <div class="results-capture" id="resultsCapture" hidden>
+    <h2 class="results-capture__headline">Want this routine when it launches?</h2>
+    <p class="results-capture__sub">We'll email you the moment your routine is available — plus founding-member pricing.</p>
+    <form class="waitlist__form" id="quizWaitlistForm" action="https://formspree.io/f/xzdnryby" method="POST">
+      <label for="quizWaitlistEmail" class="sr-only">Email address</label>
+      <input type="email" id="quizWaitlistEmail" name="email" class="waitlist__input" placeholder="Enter your email" required>
+      <button type="submit" class="btn">Save My Routine</button>
+    </form>
+    <p class="waitlist__micro" id="quizWaitlistMicro">No spam. Just your routine, when it's ready.</p>
+  </div>
 </section>
 
 <script src="cart.js"></script>
@@ -296,6 +312,66 @@
     document.getElementById('addAllBtn').onclick = function () {
       cartAddMany(recommendedIds);
       document.getElementById('addAllNote').hidden = false;
+    };
+
+    wireResultsCapture(recommendedIds, isFullSet);
+  }
+
+  // Waitlist capture on the results page. Sends the quiz answers and the
+  // recommended products alongside the email so signups arrive segmented
+  // (scalp type, climate, which routine they were shown) rather than as a
+  // bare address.
+  function wireResultsCapture(recommendedIds, isFullSet) {
+    const capture = document.getElementById('resultsCapture');
+    const form = document.getElementById('quizWaitlistForm');
+    const micro = document.getElementById('quizWaitlistMicro');
+    if (!capture || !form) return;
+
+    capture.hidden = false;
+    form.onsubmit = async function (e) {
+      e.preventDefault();
+      const input = document.getElementById('quizWaitlistEmail');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) return;
+
+      const btn = form.querySelector('.btn');
+      const originalLabel = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const payload = new URLSearchParams({
+        email: email,
+        source: 'quiz_results',
+        routine: recommendedIds.join(', '),
+        ritual_set: isFullSet ? 'yes' : 'no'
+      });
+      Object.keys(answers).forEach(function (key) {
+        const value = answers[key];
+        payload.append('quiz_' + key, Array.isArray(value) ? value.join(', ') : value);
+      });
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: payload,
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        if (response.ok) {
+          form.outerHTML = '<p class="waitlist__success">Saved. Your routine is waiting.</p>';
+          micro.textContent = "We'll reach out at " + email + " when it's ready.";
+          if (typeof gtag === 'function') { gtag('event', 'generate_lead', { event_category: 'waitlist', event_label: 'quiz_results' }); }
+          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+          if (typeof ttq !== 'undefined') { ttq.track('SubmitForm'); }
+        } else {
+          btn.textContent = originalLabel;
+          btn.disabled = false;
+          micro.textContent = 'Something went wrong — please try again.';
+        }
+      } catch (err) {
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+        micro.textContent = 'Something went wrong — please try again.';
+      }
     };
   }
 
