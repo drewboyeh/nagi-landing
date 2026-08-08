@@ -115,10 +115,11 @@ Each of these is a post:
   curls need. Finished a repositioning the brand had already started.
 - Why steam-distilled yuzu, not cold-pressed — cold-pressed citrus peel
   carries furanocoumarins, which are phototoxic on a leave-on product.
-- Why the preservative changed — benzyl alcohol is the American Contact
-  Dermatitis Society's Allergen of the Year for 2026.
 - Why a water-based leave-in *must* be preserved, and why
   "preservative-free" is a red flag rather than a selling point.
+- How a preservative was chosen — the trade-off between benzyl alcohol's
+  proven broad-spectrum efficacy and its sensitisation profile, and why
+  under-preserving a daily leave-on is the worse risk.
 - What each of the nine ingredients is actually doing.
 
 ---
