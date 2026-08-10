@@ -1,0 +1,12 @@
+{
+  "name": "yuuki-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Yuuki Hair Care — static site and compliance guardrails.",
+  "scripts": {
+    "compliance": "node scripts/compliance-check.js",
+    "compliance:suggest": "node scripts/compliance-check.js --fix-suggest",
+    "compliance:json": "node scripts/compliance-check.js --json",
+    "prepare": "git config core.hooksPath .githooks || true"
+  }
+}

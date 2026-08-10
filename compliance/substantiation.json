@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "note": "Registry of Tier 2 claims that have a substantiation record behind them. A Tier 2 term is blocked by the linter unless it appears here with a record. Adding an entry without a real record on file defeats the purpose of the system.",
+
+  "substantiated": [],
+
+  "schema": {
+    "term": "The Tier 2 term exactly as it appears in terms.json",
+    "record": "Path or reference to the evidence (test report, lab result, supplier documentation)",
+    "date": "ISO date the record was obtained",
+    "approvedBy": "Who reviewed and accepted it",
+    "scope": "Which SKUs the substantiation covers, or 'all'",
+    "expires": "Optional ISO date after which the record must be refreshed"
+  },
+
+  "example": {
+    "term": "dermatologist tested",
+    "record": "compliance/records/evidence/derm-test-kome-2026-03.pdf",
+    "date": "2026-03-14",
+    "approvedBy": "name",
+    "scope": ["kome"],
+    "expires": "2029-03-14"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "note": "Formula-side guardrail. These convert a product to an OTC drug by composition, independent of what the copy says. Checked at formulation review, not only at copy review. Not legal advice.",
+
+  "actives": [
+    { "ingredient": "pyrithione zinc", "action": "BLOCK", "reason": "OTC anti-dandruff monograph active. Presence alone makes the product a drug." },
+    { "ingredient": "zinc pyrithione", "action": "BLOCK", "reason": "Same active, alternate INCI ordering." },
+    { "ingredient": "selenium sulfide", "action": "BLOCK", "reason": "OTC anti-dandruff monograph active." },
+    { "ingredient": "coal tar", "action": "BLOCK", "reason": "OTC monograph active for dandruff/seborrheic dermatitis/psoriasis." },
+    { "ingredient": "ketoconazole", "action": "BLOCK", "reason": "Antifungal drug. Prescription or OTC drug depending on strength." },
+    { "ingredient": "sulfur", "action": "BLOCK", "reason": "OTC monograph active when used as a dandruff active. If sourced only as a trace component of another material, document the distinction in COMPLIANCE.md before proceeding." },
+    { "ingredient": "minoxidil", "action": "BLOCK", "reason": "OTC hair-regrowth drug." },
+    { "ingredient": "finasteride", "action": "BLOCK", "reason": "Prescription drug." },
+    { "ingredient": "hydroquinone", "action": "BLOCK", "reason": "Skin-lightening drug active." },
+    { "ingredient": "benzoyl peroxide", "action": "BLOCK", "reason": "OTC acne monograph active." },
+
+    {
+      "ingredient": "salicylic acid",
+      "action": "REVIEW",
+      "thresholdPercent": 1.8,
+      "reason": "Permitted as a cosmetic exfoliant below 1.8%. At or above 1.8% it is an OTC monograph active and the product becomes a drug.",
+      "additionalRisk": "Below 1.8% it is still a REVIEW item for Yuuki specifically: combined with scalp positioning, salicylic acid invites the dandruff/seborrheic reading even without a claim.",
+      "requires": "Explicit sign-off note recorded in COMPLIANCE.md, naming the SKU, the concentration, and who approved it."
+    }
+  ],
+
+  "reviewPolicy": {
+    "BLOCK": "Do not formulate. No sign-off available at cosmetic status.",
+    "REVIEW": "Permitted only with a dated sign-off note in COMPLIANCE.md. Absence of that note is treated as a failure."
+  }
+}
