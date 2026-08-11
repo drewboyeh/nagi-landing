@@ -78,15 +78,14 @@
       id: 'scalp',
       text: 'Your scalp?',
       type: 'single',
-      options: ['Dry & Flaky', 'More Dry', 'Balanced', 'More Oily']
+      options: ['Dry & Tight', 'More Dry', 'Balanced', 'More Oily']
     },
-    {
-      id: 'flakeType',
-      text: 'Flake type?',
-      type: 'single',
-      options: ['Dry & Small', 'Oily & Waxy'],
-      showIf: function (answers) { return answers.scalp === 'Dry & Flaky'; }
-    },
+    // A follow-up question classifying particle type (dry vs oily) used to sit
+    // here. It was removed rather than reworded: asking someone to self-sort
+    // their scalp presentation is diagnostic framing, and no choice of nouns
+    // makes a diagnostic question cosmetic. Its only downstream use was
+    // triggering an advisory, which now fires on scalp type instead and so
+    // reaches more people. See COMPLIANCE.md.
     {
       id: 'hairType',
       text: 'Your hair type?',
@@ -107,9 +106,9 @@
     },
     {
       id: 'shed',
-      text: 'Do you shed?',
+      text: 'Hair left in the brush?',
       type: 'single',
-      options: ['No', 'Sometimes', 'Often']
+      options: ['Rarely', 'Sometimes', 'Often']
     },
     {
       id: 'climate',
@@ -121,7 +120,7 @@
       id: 'goals',
       text: 'Your goals?',
       type: 'multi',
-      options: ['Reduce Flakiness', 'Reduce Oiliness', 'Enhance Curls', 'Reduce Frizz', 'Boost Moisture', 'Reduce Buildup', 'Add Shine', 'Strengthen Hair']
+      options: ['Reduce Dryness', 'Reduce Oiliness', 'Enhance Curls', 'Reduce Frizz', 'Boost Moisture', 'Reduce Buildup', 'Add Shine', 'Strengthen Hair']
     }
   ];
 
@@ -230,10 +229,10 @@
     document.getElementById('resultsSection').hidden = false;
 
     const goals = answers.goals || [];
-    const dryLeaningScalp = answers.scalp === 'Dry & Flaky' || answers.scalp === 'More Dry';
+    const dryLeaningScalp = answers.scalp === 'Dry & Tight' || answers.scalp === 'More Dry';
     const dryOrColdClimate = answers.climate === 'Dry' || answers.climate === 'Cold';
-    const goalsFlakinessOrMoisture = goals.indexOf('Reduce Flakiness') !== -1 || goals.indexOf('Boost Moisture') !== -1;
-    const gentleTrigger = dryLeaningScalp || dryOrColdClimate || goalsFlakinessOrMoisture;
+    const goalsDrynessOrMoisture = goals.indexOf('Reduce Dryness') !== -1 || goals.indexOf('Boost Moisture') !== -1;
+    const gentleTrigger = dryLeaningScalp || dryOrColdClimate || goalsDrynessOrMoisture;
     const clarifyingTrigger = goals.indexOf('Reduce Buildup') !== -1 || goals.indexOf('Reduce Oiliness') !== -1;
 
     // An explicitly-stated goal (buildup/oiliness) outranks an inferred dryness
@@ -256,12 +255,15 @@
     ];
     if (yuzuTrigger) recommended.push({ product: PRODUCTS.yuzu, variant: yuzuVariant });
 
+    // Advisories point people toward a clinician without naming a condition or
+    // implying the product addresses one. The referral is the whole value here,
+    // so the wording stays plain rather than clinical. See COMPLIANCE.md.
     const advisories = [];
-    if (answers.flakeType === 'Oily & Waxy') {
-      advisories.push('Oily, waxy flakes are often a scalp-health issue a cosmetic rinse won’t resolve on its own — worth a quick check with a dermatologist alongside your routine.');
+    if (answers.scalp === 'Dry & Tight' || answers.scalp === 'More Oily') {
+      advisories.push('If something about your scalp persists no matter what you wash with, it’s worth raising with a dermatologist. This line is a cosmetic ritual, not a medical product.');
     }
     if (answers.shed === 'Often') {
-      advisories.push('Frequent shedding is worth discussing with a dermatologist — this line is a scalp and styling ritual, not a hair-loss treatment.');
+      advisories.push('If you’re finding more hair in the brush than usual, a dermatologist is the right first call. These are cleansing and styling products and aren’t formulated for that.');
     }
 
     renderResults(recommended, advisories);
