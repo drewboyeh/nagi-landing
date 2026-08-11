@@ -1,0 +1,22 @@
+#!/bin/sh
+# Yuuki compliance guardrail.
+#
+# Blocks the commit on any Tier 1 (drug trigger) hit, or any Tier 2 hit
+# without a substantiation record. Run `npm run compliance:suggest` to see
+# approved replacements.
+#
+# Installed via `npm run prepare`, which sets core.hooksPath to .githooks.
+# To bypass in a genuine emergency: git commit --no-verify
+# Bypassing means the finding ships. Fix the copy instead.
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "compliance: node not found — skipping check (install Node to enable)" >&2
+  exit 0
+fi
+
+node "$(git rev-parse --show-toplevel)/scripts/compliance-check.js" || {
+  echo ""
+  echo "commit blocked by compliance check."
+  echo "see COMPLIANCE.md for why these terms are restricted."
+  exit 1
+}

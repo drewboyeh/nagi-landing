@@ -1,0 +1,22 @@
+name: Compliance
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  claim-language:
+    name: Claim language check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # No dependencies to install — the linter is plain Node.
+      - name: Run compliance check
+        run: node scripts/compliance-check.js --fix-suggest

@@ -49,7 +49,7 @@ const PRODUCTS = {
     price: 34,
     descriptions: {
       default: 'A rice-cream conditioner that seals in moisture and smooths the cuticle — the second half of the ritual reset.',
-      gentle: 'A rich, camellia-oil-forward conditioner that nourishes a dry or flaky scalp without the heavy, weighed-down feeling of mass-market formulas.',
+      gentle: 'A rich, camellia-oil-forward conditioner that nourishes a dry-feeling scalp without the heavy, weighed-down feeling of mass-market formulas.',
       clarifying: 'A light-weight conditioner that softens without re-coating the scalp in the residue you just cleansed away.'
     },
     ingredients: [
