@@ -260,7 +260,58 @@ ritual set goes to fulfilment.
 
 ---
 
-## 9. Open items
+## 9. First trial batch — 500 g
+
+Small enough to throw away, large enough to fill four bottles and live with for
+a month. This is the Option B formula from §3, with glycerin added.
+
+| INCI | % | 500 g | Note |
+|---|---:|---:|---|
+| Water (Aqua) | 89.90 | 449.5 g | Distilled |
+| Rice (Oryza Sativa) Ferment Filtrate | 5.00 | 25.0 g | Supplied, preserved, with a COA — see below |
+| Hydrolyzed Rice Protein | 2.00 | 10.0 g | |
+| Glycerin | 1.00 | 5.0 g | Humectant, and the gum wetting agent |
+| Guar Hydroxypropyltrimonium Chloride | 0.15 | 0.75 g | The definition ingredient |
+| Sodium Phytate | 0.10 | 0.5 g | |
+| Caprylyl/Capryl Glucoside | 0.60 | 3.0 g | Omit with the oil for an unscented trial |
+| Yuzu (Citrus Junos) Peel Oil | 0.10 | 0.5 g | Steam-distilled |
+| Benzyl Alcohol (and) Dehydroacetic Acid | 1.00 | 5.0 g | Confirm the blend's own pH ceiling |
+| Citric Acid (50% solution) | 0.15 q.s. | 0.75 g | |
+
+Konjac is left out. Guar covers slip and does more besides, and dropping the
+harder gum removes the lumping step and the heat step — this version is entirely
+cold-process. If konjac stays on the printed INCI list, ladder it back in per
+§2.1 as a second trial rather than fighting two variables at once.
+
+**Order of addition differs from §4.** Cationic guar wants to be dispersed cold
+and then acidified — it hydrates and the solution clarifies as the pH comes down.
+
+1. Slurry the guar into the glycerin until there are no dry lumps. This is what
+   the glycerin is for; sprinkling guar straight into water produces fisheyes.
+2. Stir the slurry into the full water charge, cold, with the sodium phytate.
+   Mix 10 minutes. It will look cloudy.
+3. Drop pH to about 4.5–5.0 with the citric solution, dropwise. The batch
+   clarifies and thickens slightly as the guar hydrates. Give it 20 minutes.
+4. Add the rice ferment filtrate, then the protein. Stir gently, blade submerged.
+5. Premix glucoside and yuzu oil separately, add in a thin stream.
+6. Add the preservation blend, stir 5 minutes.
+7. Re-check pH, land it in 4.8–5.2, make weight, fill.
+
+**Read it at 24 hours, 1 week and 4 weeks** for haze or fine precipitate — that
+is the guar/protein interaction from §3. If it hazes, rerun at 1.0% protein.
+
+### On the rice water
+
+If the rice ferment filtrate is homemade rather than supplied, it does not go in
+this formula. Home-fermented rice water is an unpreserved nutrient broth with an
+unknown starting bioburden and no COA, going into the highest microbial-exposure
+format in the line, as a leave-on. Buy Oryza Sativa Ferment Filtrate from a
+cosmetic raw-material supplier: it arrives preserved, standardised and
+documented, and the COA is one of the records the SKU file requires anyway.
+
+---
+
+## 10. Open items
 
 - **Fill size conflict.** `labels/yuzu-curl-spray-120ml.svg` is drawn for
   120 mL / 4 fl oz; the bottle art in `product-yuzu.html` reads 250 mL / 8.5 fl oz.
