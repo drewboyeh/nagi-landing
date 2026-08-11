@@ -275,31 +275,63 @@ it means sprayer sourcing, not ingredient sourcing, is where the margin work is.
 
 ## 8. The build decision
 
-**Worth building — as the fourth SKU, after the ritual set ships, and with
-Option B in it.**
+**Build it — as the fourth SKU, with the §3.3 stack in the bottle, sold as a
+between-wash reviver rather than a definer. Bench work starts now; lab spend
+waits until the ritual set has shipped.**
 
-The case for: it is the cheapest unit in the line to produce, it is already
-announced with a waitlist attached, it is the natural add-on to a set that
-currently ends at a leave-in cream, and `marketing/POSITIONING.md` already uses
-early access to it as the non-discount incentive for the founding batch. Adding
-about $25 of contribution to an existing order costs nothing in fulfilment
-labour.
+### Sell it as a reviver
 
-The case against, and it is real: roughly $1,000–2,000 of testing and 12 weeks
-of calendar sit in front of the first sale, on a SKU whose launch-math volume is
-double-digit units. It pays back somewhere around 60–80 bottles. That is
-reachable as an attachment to the set and is not reachable as a standalone
-launch.
+This is the recommendation that most changes the product, so it goes first.
 
-What would change the answer: shipping it without the challenge test (never — it
-is the highest micro-risk format in the line, on a product that goes on damp hair
-and stays there), or shipping Option A while keeping the "defines curl" front
-panel. A refresher sold as a definer, to this audience, buys one return and one
-review that costs more than the SKU earns.
+Under §3.1 there is no cationic polymer available, and without one this formula
+encourages clumps rather than holding a cast. That is not a compromise to
+apologise for — it is a genuinely good version of a different product. Reviving
+day-two and day-three curls is a real job, it is the one people buy a mist for
+most often, and a light protein-and-mucilage spray is well suited to it.
 
-Sequence it: run the Option B compatibility trial and the konjac ladder now, since
-both are bench work with no lab spend. Start the challenge test the week the
-ritual set goes to fulfilment.
+It is also the more on-brand product. `marketing/POSITIONING.md` sells repetition
+over transformation, "care, not correction." A reviver is inherently a repetition
+purchase — used between washes, every day, forever. A styling definer is a
+transformation product, which is the grammar the brand explicitly rejects.
+
+The front panel currently reads "Defines curl. Blocks frizz. No crunch." The
+second and third are earned. The first has to change. Note this is a truthfulness
+problem, not a compliance one — `defines curls` and `reduces frizz` are both
+Tier 3 approved language. The linter will not catch this; only a person will.
+
+### Sequencing
+
+Do now, at roughly $150 of raw materials and no lab spend:
+
+- the §9 trial batch, flax version
+- the kombu/alginate variant alongside it
+- the §2.1 konjac ladder, spray-tested through the production sprayer
+- hold performance against a §2 base-formula control, judged at hour 1, hour 6
+  and next morning
+
+Do not do yet: the $1,000–2,000 of challenge testing and stability. That is SKU
+four money spent before SKU one has proven demand. The launch math in
+`marketing/POSITIONING.md` is 15–35 sets; this SKU pays back its testing at
+60–80 bottles, which is reachable as an attachment to a shipping set and is not
+reachable as a standalone launch. Start the challenge test the week the ritual
+set goes to fulfilment.
+
+Meanwhile the SKU keeps earning while it does not exist — it is already the
+non-discount incentive for the founding batch, and "first access" is a better
+offer on a product that is genuinely still at the bench.
+
+### What would change the answer
+
+- **The trial holds up.** If the flax version keeps clumps at hour 6 in real
+  humidity against the control, it earns "defines" and the front panel stands.
+  Let the trial decide that, not the label art.
+- **Never ship without the challenge test.** Highest micro-risk format in the
+  line, applied to damp hair, left there. There is no volume small enough to make
+  that a reasonable risk.
+- **Shipping Option A copy on Option A formula is still fine** — a plain reviver
+  with no flax is a smaller but honest product. Shipping a reviver with a definer
+  front panel, to the most ingredient-literate audience in beauty, buys one return
+  and one review that costs more than the SKU earns.
 
 ---
 
