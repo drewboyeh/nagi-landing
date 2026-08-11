@@ -8,6 +8,8 @@
 
 > Water-based, LEAVE-ON. Highest microbial exposure format in the line — preservation evidence matters most here.
 
+Bench formulation and evidence gates: `formulation/yuzu-curl-spray.md`.
+
 Not legal advice. See `COMPLIANCE.md`.
 
 ---
