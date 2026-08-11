@@ -96,36 +96,79 @@ The curly-hair audience is, by the brand's own positioning document, the most
 ingredient-literate in beauty. They will work this out from the INCI list before
 they buy, and from the mirror if they do.
 
-Three ways to close the gap:
+### 3.1 The standing constraint
+
+**No synthetically modified ingredients, and nothing carrying a listed carcinogen
+concern — including at the reagent and residual level, not only in the finished
+material.** This is a brand rule, upstream of anything the law requires, and it
+follows from the position in `marketing/POSITIONING.md`: food-grade traditional
+inputs, harsh things deliberately rejected.
+
+It rules out the obvious answer, so it is recorded here rather than
+re-litigated each time someone reaches for a performance polymer.
+
+### 3.2 Ruled out: cationic guar
+
+Guar Hydroxypropyltrimonium Chloride is the standard fix and the one most curl
+sprays use. Guar bean backbone, quaternized with CHPTAC
+(3-chloro-2-hydroxypropyltrimethylammonium chloride) to graft on a positive
+charge; hair carries a negative charge, the polymer binds to it, and that
+substantivity is what makes curls clump.
+
+Two reasons it does not go in:
+
+- **It is a synthetically modified material.** Suppliers quote a high natural
+  origin index under ISO 16128, but that standard scores carbon origin, not
+  processing. It is not accepted under COSMOS/Ecocert.
+- **CHPTAC is manufactured from epichlorohydrin**, which is IARC Group 2A and
+  Prop 65 listed. The finished polymer is not itself a listed carcinogen and has
+  been through CIR review, but clearing it would mean holding a supplier spec on
+  residual epichlorohydrin and related chloropropanols for every lot.
+  `COMPLIANCE.md` §7 says resolve Prop 65 at formulation rather than at the
+  warning label. This is that case.
+
+Same reasoning excludes the cationic protein fallback (Cocodimonium Hydroxypropyl
+Hydrolyzed Rice Protein) and any other quaternized polysaccharide, including
+Cassia and Guar Hydroxypropyltrimonium variants.
+
+Worth noting the constraint is already being met elsewhere: caprylyl/capryl
+glucoside is non-ethoxylated, so it avoids the 1,4-dioxane and ethylene oxide
+residuals that polysorbate 20 would bring. Both are Prop 65 listed. Keep the
+glucoside.
+
+### 3.3 The remaining paths
 
 **Option A — ship as-is, reposition the copy.** Sell it as a reviver: re-wets
 day-two and day-three curls, reshapes, adds scent. Change the front panel to
 match. Zero new inputs, zero new compatibility work, and it is defensible.
 Cheapest path, smallest product.
 
-**Option B — add one conditioning polymer. Recommended.** Guar
-Hydroxypropyltrimonium Chloride at 0.10–0.25%. Plant-derived (guar bean),
-cold-processable, substantive to hair, and it is the ingredient that produces
-actual curl clumping and wet slip without stiffness. It is what separates a curl
-spray from scented water.
+**Option B — build definition from unmodified plant polymers. Recommended.**
+No single ingredient replaces cationic guar, so this is a stack rather than a
+swap:
 
-> **Compatibility trial required.** Cationic guar and hydrolysed protein can
-> complex at pH 5 and throw a haze or a fine precipitate. Trial 0.15% guar
-> against protein at 2.0% / 1.5% / 1.0%, read at 24 h, 1 week and 4 weeks. If
-> haze persists at 1.0% protein, swap the protein for its cationic form
-> (Cocodimonium Hydroxypropyl Hydrolyzed Rice Protein), which keeps the rice
-> story, keeps the ingredient count at ten, and is substantive in its own right.
+| Addition | Level | Doing what |
+|---|---|---|
+| Hydrolyzed Rice Protein — raise from 2.0% | 3.0% | Primary definer. Above ~3% repeated use starts to feel stiff, so this is the ceiling, not a dial. |
+| Linum Usitatissimum (Linseed) Seed Extract | 2–5% | The film former. Flaxseed mucilage is the strongest definition available without modification. **Supplied and preserved, never home-brewed.** |
+| Konjac Root Extract | 0.05–0.10% | Slip, per the §2.1 ladder |
+| Glycerin | 1.0% | Humectant, and the gum wetting agent |
 
-Option B adds an eleventh line to the INCI list, which brushes against the "nine
-ingredients" framing in `marketing/POSITIONING.md`. That framing describes the
-core three-step line, and the positioning document itself argues that explaining
-ingredient choices is the brand's unfair advantage. "Guar bean, 0.15%, it is the
-thing that makes curls clump" is a post, not a liability.
+On-brand alternative to the flaxseed, worth trialling in parallel: **Laminaria
+Japonica Extract** or sodium alginate at 0.1–0.3%. Kombu fits the Japanese
+ingredient story better than flax does, and alginate films well. It is more
+sensitive to hard water, which is what the sodium phytate in the base is already
+there for.
 
-**Option C — flaxseed mucilage as the film former.** The most traditional-looking
-answer and the worst operationally: batch-to-batch variability, a viscosity that
-fights the sprayer, and a nutrient load that makes preservation harder on the
-riskiest format in the line. Not recommended.
+**Set expectations honestly:** an unmodified plant stack gives softer, more
+touchable definition that gives up ground to a cationic polymer in high humidity.
+That is the trade being made deliberately. It also means the front panel still
+needs the Option A treatment — this stack earns "defines" in the sense of
+encouraging clumps, not in the sense of locking a cast.
+
+**Option C — a synthetic film former** (VP/VA copolymer and similar). Best
+humidity performance of anything here, and out of bounds under §3.1. Recorded
+only so the reason is on paper.
 
 ---
 
@@ -263,42 +306,51 @@ ritual set goes to fulfilment.
 ## 9. First trial batch — 500 g
 
 Small enough to throw away, large enough to fill four bottles and live with for
-a month. This is the Option B formula from §3, with glycerin added.
+a month. This is the §3.3 Option B stack — the unmodified plant-polymer route —
+sized for the bench. Percentages total 100.00.
 
 | INCI | % | 500 g | Note |
 |---|---:|---:|---|
-| Water (Aqua) | 89.90 | 449.5 g | Distilled |
+| Water (Aqua) | 85.65 | 428.25 g | Distilled |
 | Rice (Oryza Sativa) Ferment Filtrate | 5.00 | 25.0 g | Supplied, preserved, with a COA — see below |
-| Hydrolyzed Rice Protein | 2.00 | 10.0 g | |
+| Linum Usitatissimum (Linseed) Seed Extract | 3.00 | 15.0 g | The film former. Supplied, not home-brewed. |
+| Hydrolyzed Rice Protein | 3.00 | 15.0 g | Primary definer, at its ceiling |
 | Glycerin | 1.00 | 5.0 g | Humectant, and the gum wetting agent |
-| Guar Hydroxypropyltrimonium Chloride | 0.15 | 0.75 g | The definition ingredient |
 | Sodium Phytate | 0.10 | 0.5 g | |
+| Konjac (Amorphophallus Konjac) Root Extract | 0.10 | 0.5 g | Slip. Ladder per §2.1. |
 | Caprylyl/Capryl Glucoside | 0.60 | 3.0 g | Omit with the oil for an unscented trial |
 | Yuzu (Citrus Junos) Peel Oil | 0.10 | 0.5 g | Steam-distilled |
 | Benzyl Alcohol (and) Dehydroacetic Acid | 1.00 | 5.0 g | Confirm the blend's own pH ceiling |
-| Citric Acid (50% solution) | 0.15 q.s. | 0.75 g | |
+| Citric Acid (50% solution) | 0.45 q.s. | 2.25 g | More acid needed here than in §2 — the flax extract carries pH up |
 
-Konjac is left out. Guar covers slip and does more besides, and dropping the
-harder gum removes the lumping step and the heat step — this version is entirely
-cold-process. If konjac stays on the printed INCI list, ladder it back in per
-§2.1 as a second trial rather than fighting two variables at once.
+**Procedure.** Cold process except the konjac hydration, which still needs heat.
 
-**Order of addition differs from §4.** Cationic guar wants to be dispersed cold
-and then acidified — it hydrates and the solution clarifies as the pH comes down.
-
-1. Slurry the guar into the glycerin until there are no dry lumps. This is what
-   the glycerin is for; sprinkling guar straight into water produces fisheyes.
-2. Stir the slurry into the full water charge, cold, with the sodium phytate.
-   Mix 10 minutes. It will look cloudy.
-3. Drop pH to about 4.5–5.0 with the citric solution, dropwise. The batch
-   clarifies and thickens slightly as the guar hydrates. Give it 20 minutes.
-4. Add the rice ferment filtrate, then the protein. Stir gently, blade submerged.
-5. Premix glucoside and yuzu oil separately, add in a thin stream.
+1. Slurry the konjac powder into the glycerin until there are no dry lumps. This
+   is what the glycerin is for — sprinkled straight into water it makes fisheyes
+   that never disperse.
+2. Heat 270 g of the water to 70–75 °C. Stir in the konjac/glycerin slurry and
+   the sodium phytate, hold 20 minutes with stirring.
+3. Add the remaining water cold. Do not proceed below 40 °C.
+4. Add the flaxseed extract, then the rice ferment filtrate, then the protein.
+   Stir gently with the blade submerged — this batch foams readily.
+5. Premix the glucoside and yuzu oil separately, add in a thin stream.
 6. Add the preservation blend, stir 5 minutes.
-7. Re-check pH, land it in 4.8–5.2, make weight, fill.
+7. pH into 4.8–5.2 with the citric solution, dropwise. Expect to use noticeably
+   more than the base formula. Make weight, fill.
 
-**Read it at 24 hours, 1 week and 4 weeks** for haze or fine precipitate — that
-is the guar/protein interaction from §3. If it hazes, rerun at 1.0% protein.
+**Two things to watch.** Sprayability is the first — flax mucilage plus konjac
+plus 3% protein is the most viscous version of this product, so mist-test at
+24 hours and again at two weeks before deciding the levels are right. Drop the
+konjac to 0.05% before touching the flax if it spits. The second is preservation:
+flaxseed extract and ferment filtrate together are a heavy nutrient load, so this
+is the version that most needs the challenge test in §6 run on the final formula
+rather than on a relative of it.
+
+**Hold performance** is the point of the trial. Wash, apply to soaking-wet hair,
+scrunch, air dry, and judge at hour 1, hour 6 and next morning — clump retention
+and frizz at the crown. Compare against a control of the §2 base formula. If the
+flax version is not obviously better, the honest conclusion is Option A and the
+front panel changes.
 
 ### On the rice water
 
